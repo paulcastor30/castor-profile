@@ -28,3 +28,10 @@ qa/screenshots/
 qa/results.json
 
 qa/accessibility-results.json
+
+# Temporary server build for public-page pre-rendering
+.prerender/
+qa/lab-results.json
+qa/lab-accessibility-results.json
+
+qa/lab-keyboard-results.json

@@ -10,7 +10,7 @@ The original site had useful personal and project information, but its main jour
 
 | Original issue | Refined behavior |
 | --- | --- |
-| Seven navigation choices and a mobile menu | Three visible destinations: About, My work, Contact |
+| Seven navigation choices and a mobile menu | About, My work, and Contact; Laboratory added in the later lab refinement |
 | Full-screen introduction, repeated specialist terminology | Short personal introduction with a plain-language description and direct email button |
 | Long academic and engineering sections | Education, experience, academic service, extra projects, and papers accessible through keyboard-operable disclosures |
 | Seven competing featured projects | Three examples with purpose, role, and a project-specific email link; four others remain available |
@@ -84,3 +84,25 @@ The 320×256 CSS pixel scenario checks a layout equivalent to a 1280×1024 viewp
 This is not a claim of full WCAG conformance or usability for every disability. Actual VoiceOver/NVDA sessions, operating-system magnifiers, and usability sessions with people with disabilities have not been performed. A brief session with those users remains the strongest next validation. The page gives visitors a direct route to report difficulty by email.
 
 Research-profile and publisher link destinations came from the owner's CV; access requirements and current availability on those external websites were not tested. Email delivery, increased traffic, and a live production deployment were not verified or performed.
+
+## Laboratory refinement on October 3, 2026
+
+The research records were unsuitable as a wide public table: researchers occupied continuation rows, degree programs and graduation dates were mixed with supervision, and there was no clear contact journey. The laboratory now has its own `/lab` area while the homepage remains focused on Paul and direct personal contact.
+
+The directory contains 16 thesis groups and 40 researchers. Each group has a short purpose, the supplied official title, named adviser and co-adviser, researcher cards, and a relevant lab-head contact link. Research has optional labelled native filters, an announced result count, a clear empty state, and a reset button. Filtered addresses can be shared. People and contact pages use direct headings and consistent navigation.
+
+Castor and Alce receive equal co-head presentation. Dr. Adrian P. Galido remains primary adviser on the four master's theses; lab leadership does not replace thesis supervision. Classes of 2025 and 2026 describe graduated researchers. One ongoing group remains separate. Clean decorative portrait boxes are hidden from assistive technology, with names visible alongside them. Student email addresses, empty media panels, and unavailable download links are omitted.
+
+The owner explicitly confirmed the Escolano group's EECSI 2026 acceptance and the Narvasa group's NiDS 2026 acceptance. Their paper titles and citations come from the supplied CV. Both are labelled Accepted, without invented DOI or paper links; conference dates alone do not establish presentation or publication. Other groups have no output section until an association and status are confirmed.
+
+Initial HTML, page-specific metadata, and canonical links are generated for all 21 public pages. The Vercel configuration serves these through clean URLs, so shared group addresses and search crawlers receive the actual page content. The lab uses the same relative text sizing, visible focus, keyboard access, high-contrast support, and generous targets as the portfolio.
+
+Verification results are recorded after the final checks below. This local addition does not establish institutional approval or guarantee reach; deployment and real assistive-technology user testing remain outside the verified scope.
+
+### Final laboratory verification
+
+Production generation, TypeScript, and changed-file lint checks passed. The homepage's contact, navigation, and keyboard disclosure journeys passed at 320, 390, 768, and 1440 pixels. Its updated 25-control expanded keyboard walk passed.
+
+The lab checks passed every group address, all 40 researcher records, both confirmed accepted outputs, degree/cohort filter combinations including an empty result, shared filtered addresses, both lab-head clipboard success and permission-denied fallback, skip links, and focus on route changes. Five representative page types were checked under phone, desktop, 200% root text, 320×256 reflow, and forced-color scenarios: no horizontal overflow, undersized tested standalone targets, or axe-core WCAG A/AA violations were found. Forced-color screenshots flagged for contrast review were visually inspected.
+
+Complete keyboard walks across those five lab page types verified all interactive controls were reachable with visible focus and without header obstruction. All 21 public addresses returned their own heading and canonical link with JavaScript disabled. These checks verify local build behavior; they do not replace VoiceOver/NVDA testing or sessions with people with disabilities.

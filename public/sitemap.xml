@@ -1,2 +1,24 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"><url><loc>https://paulrodolfcastor.vercel.app/</loc></url></urlset>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+<url><loc>https://paulrodolfcastor.vercel.app/</loc></url>
+<url><loc>https://paulrodolfcastor.vercel.app/lab</loc></url>
+<url><loc>https://paulrodolfcastor.vercel.app/lab/research</loc></url>
+<url><loc>https://paulrodolfcastor.vercel.app/lab/people</loc></url>
+<url><loc>https://paulrodolfcastor.vercel.app/lab/contact</loc></url>
+<url><loc>https://paulrodolfcastor.vercel.app/lab/research/pedestrian-warning</loc></url>
+<url><loc>https://paulrodolfcastor.vercel.app/lab/research/avian-diversity</loc></url>
+<url><loc>https://paulrodolfcastor.vercel.app/lab/research/hyperlocal-monitoring</loc></url>
+<url><loc>https://paulrodolfcastor.vercel.app/lab/research/cacao-disease</loc></url>
+<url><loc>https://paulrodolfcastor.vercel.app/lab/research/smart-shelf</loc></url>
+<url><loc>https://paulrodolfcastor.vercel.app/lab/research/calamansi-disease</loc></url>
+<url><loc>https://paulrodolfcastor.vercel.app/lab/research/fish-vendor-ice</loc></url>
+<url><loc>https://paulrodolfcastor.vercel.app/lab/research/rice-growth</loc></url>
+<url><loc>https://paulrodolfcastor.vercel.app/lab/research/goat-geofencing</loc></url>
+<url><loc>https://paulrodolfcastor.vercel.app/lab/research/fish-container-temperature</loc></url>
+<url><loc>https://paulrodolfcastor.vercel.app/lab/research/bantay-dagat</loc></url>
+<url><loc>https://paulrodolfcastor.vercel.app/lab/research/smart-swine-feeding</loc></url>
+<url><loc>https://paulrodolfcastor.vercel.app/lab/research/campus-navigation</loc></url>
+<url><loc>https://paulrodolfcastor.vercel.app/lab/research/energy-management</loc></url>
+<url><loc>https://paulrodolfcastor.vercel.app/lab/research/sign-language-headset</loc></url>
+<url><loc>https://paulrodolfcastor.vercel.app/lab/research/document-delivery</loc></url>
+</urlset>

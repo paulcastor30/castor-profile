@@ -14,6 +14,7 @@ try {
     page.on('pageerror', error => errors.push(error.message));
     page.on('console', message => { if (message.type() === 'error') errors.push(message.text()); });
     await page.goto(baseUrl);
+    await page.waitForLoadState("networkidle");
     await page.waitForLoadState('networkidle');
     assert.equal(await page.locator('h1').count(), 1);
     assert.equal(await page.locator('vite-error-overlay').count(), 0);
@@ -57,11 +58,13 @@ try {
     assert(projectLinks.every(link => link.startsWith('mailto:paulrodolf.castor@g.msuiit.edu.ph?subject=')));
     assert.deepEqual(errors, []);
     await page.goto(baseUrl);
+    await page.waitForLoadState("networkidle");
     await page.keyboard.press('Tab');
     assert.equal(await page.evaluate(() => document.activeElement.textContent), 'Skip to content');
     await page.keyboard.press('Enter');
     assert.equal(await page.evaluate(() => document.activeElement.id), 'main-content');
     await page.goto(baseUrl);
+    await page.waitForLoadState("networkidle");
     await page.keyboard.press('Tab');
     await page.keyboard.press('Tab');
     assert.equal(await page.evaluate(() => document.activeElement.textContent), 'Skip to contact');

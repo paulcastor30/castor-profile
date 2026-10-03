@@ -1,3 +1,4 @@
+import { Link } from "react-router-dom";
 import Education from "./Education";
 import Experience from "./Experience";
 import AcademicService from "./AcademicService";
@@ -16,6 +17,7 @@ export default function About() {
             <a className="text-link" href={profile.orcid}>My research profile on ORCID</a>
             <a className="text-link" href={profile.scopus}>My publications on Scopus</a>
           </div>
+          <div className="lab-portfolio-link"><h3>Our research laboratory</h3><p>I co-head the Edge Intelligence and AIoT Research Laboratory with Apple Rose B. Alce. Meet our researchers and explore the thesis groups.</p><Link className="text-link" to="/lab">Visit the research laboratory</Link></div>
           <details className="disclosure background-details">
             <summary>My education, experience, and academic service</summary>
             <div className="background-content"><Education /><Experience /><AcademicService /></div>
