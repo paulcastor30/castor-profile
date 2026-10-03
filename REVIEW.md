@@ -217,3 +217,10 @@ Production build, TypeScript and changed-file lint passed. Research tests verifi
 The supplied example showed visible side bands around two narrower graduation photographs while a wider photo filled its frame. The cause was contain fitting within fixed 4:5 frames. Portraits now fill their existing frames without distortion, with an upper-centered display crop rather than uneven letterboxing. The image files themselves remain unchanged, as do names, card layouts and empty frames.
 
 All 42 matched portrait assets were visually checked together under the new 4:5 fitting; faces remained visible. The local campus-navigation group was inspected in the browser. Production generation passed, and portrait decoding, forty unique directory photos, twelve missing frames, small image assets, redundant-alt handling and broken-image fallback passed. Twenty-five portrait layout/accessibility scenarios passed phone, desktop, 200% text, narrow reflow and forced colors with zero automated WCAG A/AA violations and no horizontal overflow. Changes remain local.
+
+
+## Princess Castillo photo update
+
+The newly uploaded Castillo_Photo.jpg was matched by the supplied folder and existing full name to Princess April E. Castillo. Her People entry and Smart G-ID group now display the same optimized photo. A display-only framing adjustment reduces excess building/background in the frame while preserving her face. No academic membership, status, supervision or research output was changed. Source upload and all existing photos remain unchanged; missing-photo frames remain empty.
+
+Production generation, TypeScript and changed-file lint passed. Portrait checks verified 41 unique researcher images, eleven missing frames, 43 web assets, decoding, small file sizes and failure fallback. Twenty-five portrait layout/accessibility scenarios and twenty-five group scenarios passed phone, desktop, 200% text, narrow reflow and forced colors with zero automated WCAG A/AA violations and no horizontal overflow. The Smart G-ID researcher framing was visually inspected. Changes remain local; actual disability-user sessions and deployment are outstanding.

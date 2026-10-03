@@ -156,3 +156,8 @@ Research now uses explicit status/class and program sections: ongoing MSCA, ongo
 ## Portrait display fitting
 
 At the owner's request, portrait presentation now fills each existing frame using CSS object-fit: cover and object-position: center 20%, replacing the earlier contain setting that created uneven side bands. Display crops favor the upper part of each photo to keep faces visible. Source files and optimized assets are unchanged; no pixels, identities or names were edited. Empty-photo frames and broken-image fallbacks remain. Co-head card content and layout are unchanged.
+
+
+## Princess Castillo portrait
+
+Princess April E. Castillo's uploaded photo is matched to her existing Smart G-ID and People records. The optimized WebP is 525×700 and approximately 86 KB; the original remains unchanged and excluded from deployment output. Optional portrait framing metadata allows this casual photo's on-page crop to emphasize her face without altering the image file. Existing portraits retain their prior framing. There are now 43 matched assets: 41 researchers and two co-heads. Eleven researchers retain empty frames.

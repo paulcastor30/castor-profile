@@ -7,6 +7,6 @@ export default function Portrait({ name, className = "", optional = false }: { n
   const available = asset && failedSource !== asset.src;
   if (!available && optional) return null;
   return <div className={`portrait-placeholder ${className}`} aria-hidden="true">
-    {available && <img src={asset.src} width={asset.width} height={asset.height} alt="" loading="lazy" decoding="async" onError={() => setFailedSource(asset.src)} />}
+    {available && <img src={asset.src} width={asset.width} height={asset.height} alt="" style={asset.framing ? { transform: `scale(${asset.framing.scale})`, transformOrigin: asset.framing.origin } : undefined} loading="lazy" decoding="async" onError={() => setFailedSource(asset.src)} />}
   </div>;
 }

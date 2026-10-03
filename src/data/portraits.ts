@@ -1,6 +1,7 @@
 // Explicitly matched to the owner-supplied portrait folders.
-export type PortraitAsset = { src: string; width: number; height: number };
+export type PortraitAsset = { src: string; width: number; height: number; framing?: { scale: number; origin: string } };
 export const portraits: Record<string, PortraitAsset> = {
+  "Princess April E. Castillo": { src: "/images/portraits/princess-april-e-castillo.webp", width: 525, height: 700, framing: { scale: 1.5, origin: "50% 60%" } },
   "Apple Rose B. Alce": {
     "src": "/images/portraits/apple-rose-b-alce.webp",
     "width": 560,
