@@ -299,9 +299,9 @@ html { scroll-behavior: auto; }
 .research-filters select { width: 100%; min-width: 0; min-height: 48px; padding: .625rem; font: inherit; background: #fffefa; border: 1px solid #58635d; border-radius: 5px; }
 .research-count { margin-block: 1.25rem; color: #58635d; }
 .research-grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 1.5rem; }
-.research-card h2 { font-size: 1.5rem; line-height: 1.35; }
-.research-card h2 a, .people-group h2 a, .research-outputs h3 a { color: #216b56; text-decoration: underline; text-underline-offset: .2em; }
-.research-card h2 a { display: block; min-height: 44px; }
+.research-card h3 { font-size: 1.5rem; line-height: 1.35; }
+.research-card h3 a, .people-group h2 a, .research-outputs h3 a { color: #216b56; text-decoration: underline; text-underline-offset: .2em; }
+.research-card h3 a { display: block; min-height: 44px; }
 .research-card .work-role { margin-bottom: 1rem; }
 .output-note { font-size: 1rem; margin-top: 1rem; color: #216b56; }
 .people-section-title { margin-block: 2.5rem 1.5rem; font-size: 1.75rem; }
@@ -398,3 +398,6 @@ html { scroll-behavior: auto; }
 .project-contact > .text-link { display: flex; width: fit-content; margin-top: 1rem; }
 @media (max-width: 640px) { .people-category > h2 { scroll-margin-top: 1rem; } }
 @media (forced-colors: active) { .people-category > h2:focus-visible { outline-color: Highlight; } }
+
+.research-category { margin-block: 2rem 3rem; }
+.research-category > h2 { font-size: 1.75rem; line-height: 1.4; margin-bottom: 1.5rem; }

@@ -15,8 +15,11 @@ try {
  page.on('console',e=>{if(e.type()==='error')errors.push(e.text());});
  await visit(`${base}/lab/research`);
  await page.getByRole('status').filter({hasText:'21 thesis groups'}).waitFor();
- const links = await page.locator('.research-card h2 a').evaluateAll(es=>es.map(e=>e.getAttribute('href')));
+ const links = await page.locator('.research-card h3 a').evaluateAll(es=>es.map(e=>e.getAttribute('href')));
  assert.equal(links.length,21);
+ assert.deepEqual(await page.locator('.research-category > h2').allTextContents(), ['Ongoing research · MSCA','Ongoing research · BSCA','Graduates · Class of 2026 · MSCA','Graduates · Class of 2026 · BSCA','Graduates · Class of 2025 · BSCA']);
+ for(const category of await page.locator('.research-category').all()) {const titles=await category.locator('.research-card h3').allTextContents();assert.deepEqual(titles,[...titles].sort((a,b)=>a.localeCompare(b)));}
+
  for(const [program,cohort,count] of [['MS','',5],['BS','',16],['','2026',8],['','2025',7],['','current',6],['MS','2025',0]]) {
   await page.getByLabel('Program',{exact:true}).selectOption(program);
   await page.getByLabel('Status / graduation class',{exact:true}).selectOption(cohort);
@@ -88,7 +91,7 @@ try {
    await p.addScriptTag({content:axe});
    const audit=await p.evaluate(()=>axe.run(document,{runOnly:{type:'tag',values:['wcag2a','wcag2aa','wcag21a','wcag21aa','wcag22aa']}}));
    const violations=audit.violations.map(v=>({id:v.id,nodes:v.nodes.map(n=>n.target)}));
-   const targets=await p.locator('.navigation a,.primary-action,.text-action,.text-link,select,input,.site-footer a,.research-card h2 a').evaluateAll(es=>es.filter(e=>e.getClientRects().length).map(e=>({text:e.textContent,width:e.getBoundingClientRect().width,height:e.getBoundingClientRect().height})));
+   const targets=await p.locator('.navigation a,.primary-action,.text-action,.text-link,select,input,.site-footer a,.research-card h3 a').evaluateAll(es=>es.filter(e=>e.getClientRects().length).map(e=>({text:e.textContent,width:e.getBoundingClientRect().width,height:e.getBoundingClientRect().height})));
    assert(targets.every(t=>t.width>=44&&t.height>=44),`Small targets ${JSON.stringify(targets.filter(t=>t.width<44||t.height<44))}`);
    const name=route.split('/').filter(Boolean).join('-');
    await p.screenshot({path:`qa/screenshots/lab/${scenario.name}-${name}.png`,fullPage:true});

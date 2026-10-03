@@ -146,3 +146,8 @@ People now renders all 52 unique researchers on a single continuous page. Previo
 ## Navigation refinement for the continuous directory
 
 People retains the complete scrollable roster and the owner-protected co-head cards. Section links below the filters jump to the visible current/program/class headings without hiding people. Headings receive focus and clear the navigation header; a closing link returns to researcher search. The collaboration block also links to Contact's visible/copyable email addresses for visitors whose mail app links do not work. Research and People use the same “Status / graduation class” filter label. Academic ordering compares current status, graduation year and program directly, avoiding a fixed future-year cutoff.
+
+
+## Research ordering
+
+Research now uses explicit status/class and program sections: ongoing MSCA, ongoing BSCA, then graduates by newest class with MSCA before BSCA within a class. Projects are alphabetical within each section. Program/cohort filters retain this order and omit empty sections. Card headings are level three below level-two section headings. Graduation cohorts do not establish paper publication status.

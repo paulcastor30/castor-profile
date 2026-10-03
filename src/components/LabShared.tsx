@@ -10,7 +10,7 @@ export function ResearchCard({ group }: { group: ThesisGroup }) {
   return (
     <article className="work-card research-card">
       <p className="work-role">{programName(group.program)}</p>
-      <h2><Link to={`/lab/research/${group.slug}`}>{group.shortTitle}</Link></h2>
+      <h3><Link to={`/lab/research/${group.slug}`}>{group.shortTitle}</Link></h3>
       <p className="work-description">{group.summary}</p>
       <p className="work-role">{groupStatus(group)}</p>
       <p>{group.researchers.length === 1 ? group.researchers[0] : `${group.researchers.length} researchers`}</p>
