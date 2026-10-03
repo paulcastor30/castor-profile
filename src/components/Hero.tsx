@@ -1,5 +1,4 @@
 import { ArrowDown, ArrowUpRight } from "lucide-react";
-import Portrait from "./Portrait";
 import { profile } from "@/lib/profile";
 
 export default function Hero() {
@@ -9,7 +8,6 @@ export default function Hero() {
         <p className="eyebrow">Engineer · Researcher · Educator</p>
         <h1 id="intro-title">Hi, I’m Paul<span aria-hidden="true">.</span></h1>
         <p className="full-name">Paul Rodolf P. Castor</p>
-        <Portrait name={profile.name} className="personal-portrait" optional />
         <p className="hero-description">I build connected sensors and practical tools for environmental monitoring, agriculture, and assistive technology.</p>
         <p className="hero-affiliation">Assistant Professor at Mindanao State University – Iligan Institute of Technology (MSU-IIT), Philippines.</p>
         <div className="actions">

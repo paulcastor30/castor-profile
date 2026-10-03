@@ -154,7 +154,7 @@ a:focus-visible, button:focus-visible, summary:focus-visible { outline: 3px soli
 .skip-link { position: fixed; left: 16px; top: 12px; transform: translateY(-150%); z-index: 100; background: #fff; padding: 12px 20px; }
 .skip-link:focus { transform: none; }
 .hero { padding-block: 48px; max-width: 960px; }
-.hero-copy { position: relative; padding-right: 220px; }
+.hero-copy { max-width: 740px; }
 .hero-contact-help { margin-top: 8px; }
 .eyebrow { font-family: inherit; color: #216b56; font-size: 0.75rem; font-weight: 650; letter-spacing: .12em; text-transform: uppercase; margin-bottom: 20px; }
 .hero h1 { font-size: clamp(3rem, 5vw, 4.25rem); line-height: 1.08; letter-spacing: -.06em; font-weight: 400; margin: 0; }
@@ -357,9 +357,6 @@ html { scroll-behavior: auto; }
 .head-portrait { width: 96px; aspect-ratio: 1; float: right; margin: 0 0 1rem 1rem; }
 @media (max-width: 540px) { .head-portrait { float: none; width: 120px; margin: 0 0 1rem; } }
 
-.personal-portrait { width: 160px; margin: 0; }
-.hero .personal-portrait { position: absolute; right: 0; top: 0; }
-@media (max-width: 600px) { .hero-copy { padding-right: 0; } .hero .personal-portrait { position: static; width: 120px; margin-top: 24px; } }
 .co-adviser-list { display: grid; gap: .5rem; }
 
 /* Keep the people directory compact while retaining names and optional portraits. */

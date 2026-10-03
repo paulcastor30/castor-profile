@@ -196,3 +196,7 @@ The About heading spans the section. A narrow portrait column now aligns with th
 ## Opening-view refinement — 3 October 2026
 
 Moved the personal portrait into the first introduction and removed its duplicate from About. Desktop places it beside the greeting; mobile places it after the full name. Removed the repeated Engineering/Research/Teaching column, reduced opening spacing, strengthened full-name emphasis, clarified research areas, and added email-app guidance with a link to the existing copyable address. Lab pages and co-head cards are unchanged. The portrait was fully inside the initial viewport at 1800×960, 1440×900, 1280×720, and 390×900. Build, TypeScript, changed-component lint, keyboard, enlarged-text/reflow, forced colors, email-copy/fallback and navigation checks passed.
+
+## Personal portfolio photo preference
+
+The owner prefers a text-only personal portfolio to avoid unnecessary appearance-based judgments. The personal portrait and its reserved layout space have been removed from the homepage. Lab-head and researcher portraits remain on lab pages. Preserve this distinction in future updates.
