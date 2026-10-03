@@ -18,6 +18,7 @@ const projects = [
     role: "Thesis adviser",
     tags: ["IoT", "Monitoring"],
     group: "goat-geofencing",
+    period: "August 2025 – May 2026",
   },
   {
     title: "Wearable sign-language letter recognition",
@@ -26,6 +27,23 @@ const projects = [
     role: "Thesis adviser",
     tags: ["Edge", "Assistive"],
     group: "sign-language-headset",
+    period: "August 2024 – May 2025",
+  },
+  {
+    title: "Calamansi disease detection",
+    desc: "A small device uses image recognition to help detect citrus greening, a disease affecting calamansi plants.",
+    stack: ["ESP32-S3", "C/C++", "Edge Impulse"],
+    role: "Thesis adviser",
+    group: "calamansi-disease",
+    period: "August 2025 – May 2026",
+  },
+  {
+    title: "Fish transport temperature monitoring",
+    desc: "A connected sensor system monitors temperatures in fish containers during distribution.",
+    stack: ["ESP32", "C/C++", "Low-power sensor networks"],
+    role: "Thesis adviser",
+    group: "fish-container-temperature",
+    period: "August 2024 – May 2025",
   },
   {
     title: "Automated irrigation for rice fields",
@@ -83,6 +101,7 @@ export default function Projects() {
               <p className="work-number">Project 0{index + 1}</p>
               <h3>{project.title}</h3>
               <p className="work-description">{project.desc}</p>
+              {project.period && <p className="work-role">Research period: {project.period}</p>}
               <p className="work-role">My role: {project.role.toLowerCase()}</p>
               {project.group && <Link className="text-link" to={`/lab/research/${project.group}`}>Meet the {project.group === "goat-geofencing" ? "goat monitoring" : "sign-language"} research team</Link>}
               <a className="text-link" href={`mailto:${profile.email}?subject=${encodeURIComponent(`Question about ${project.title}`)}`} aria-label={`Email me about this project: ${project.title}`}>Email me about this project <span aria-hidden="true">↗</span></a>
@@ -93,7 +112,7 @@ export default function Projects() {
           <summary>More engineering projects</summary>
           <div className="additional-work">
             {projects.slice(3).map(project => (
-              <article key={project.title}><h3>{project.title}</h3><p>{project.desc}</p><p className="work-role">My role: {project.role.toLowerCase()}</p><p className="technology">Built with: {project.stack.join(", ")}</p></article>
+              <article key={project.title}><h3>{project.title}</h3><p>{project.desc}</p><p className="work-role">My role: {project.role.toLowerCase()}</p><p className="technology">Tools and platform: {project.stack.join(", ")}</p>{project.period && <p>Research period: {project.period}</p>}{project.group && <Link className="text-link" to={`/lab/research/${project.group}`}>Meet the {project.title.toLowerCase()} team</Link>}</article>
             ))}
           </div>
         </details>

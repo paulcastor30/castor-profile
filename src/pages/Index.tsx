@@ -14,6 +14,7 @@ const structuredData = {
     "@type": "Person",
     name: profile.name,
     jobTitle: "Engineer, Researcher, Assistant Professor",
+    image: `${profile.siteUrl}/images/portraits/paul-rodolf-p-castor.webp`,
     url: profile.siteUrl,
     sameAs: [profile.github, profile.orcid, profile.scopus],
     affiliation: {

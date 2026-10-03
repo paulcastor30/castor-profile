@@ -161,11 +161,6 @@ export const portraits: Record<string, PortraitAsset> = {
     "width": 560,
     "height": 700
   },
-  "Crischan Larita": {
-    "src": "/images/portraits/crischan-larita.webp",
-    "width": 457,
-    "height": 700
-  },
   "Darel James Narvasa": {
     "src": "/images/portraits/darel-james-narvasa.webp",
     "width": 560,
@@ -185,5 +180,35 @@ export const portraits: Record<string, PortraitAsset> = {
     "src": "/images/portraits/kim-kundiman.webp",
     "width": 500,
     "height": 700
+  },
+  "Crischan G. Larita": {
+    "src": "/images/portraits/crischan-larita.webp",
+    "width": 457,
+    "height": 700
+  },
+  "Paul Rodolf P. Castor": {
+    "src": "/images/portraits/paul-rodolf-p-castor.webp",
+    "width": 467,
+    "height": 700
+  },
+  "Tristan E. Listanco": {
+    "src": "/images/portraits/tristan-e-listanco.webp",
+    "width": 467,
+    "height": 700
+  },
+  "Shanice Reih H. Tanque": {
+    "src": "/images/portraits/shanice-reih-h-tanque.webp",
+    "width": 560,
+    "height": 560
+  },
+  "Phoebien D. Cañete": {
+    "src": "/images/portraits/phoebien-d-canete.webp",
+    "width": 560,
+    "height": 563
+  },
+  "Andrew Earl L. Andres": {
+    "src": "/images/portraits/andrew-earl-l-andres.webp",
+    "width": 560,
+    "height": 560
   }
 };

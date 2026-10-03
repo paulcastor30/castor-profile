@@ -360,3 +360,22 @@ html { scroll-behavior: auto; }
 .portrait-placeholder img { display: block; width: 100%; height: 100%; object-fit: contain; }
 .head-portrait { width: 96px; aspect-ratio: 1; float: right; margin: 0 0 1rem 1rem; }
 @media (max-width: 540px) { .head-portrait { float: none; width: 120px; margin: 0 0 1rem; } }
+
+.personal-portrait { width: 160px; margin-top: 1.5rem; }
+.co-adviser-list { display: grid; gap: .5rem; }
+
+/* Keep the people directory compact while retaining names and optional portraits. */
+.people-filters { flex-wrap: wrap; }
+.people-filters > div { min-width: 0; }
+.people-search { flex: 1 1 18rem; }
+.people-search input { width: 100%; min-height: 44px; padding: .65rem .8rem; border: 1px solid #647567; border-radius: .35rem; background: white; color: #233027; }
+.directory-title { scroll-margin-top: 7rem; }
+.directory-title:focus-visible { outline: 3px solid #216b56; outline-offset: 5px; }
+.people-group h2 a { display: inline-flex; align-items: center; min-height: 44px; }
+.people-names { padding-left: 1.25rem; margin-block: 1rem; line-height: 1.8; }
+.people-portraits summary { cursor: pointer; min-height: 44px; padding-block: .65rem; color: #216b56; text-decoration: underline; text-underline-offset: .2em; }
+.people-portraits .researcher-grid { margin-top: 1rem; }
+.people-pagination { display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 1rem; margin-block: 2rem; }
+.people-pagination button:disabled { color: #59645c; cursor: default; text-decoration: none; }
+@media (max-width: 640px) { .people-filters > div { width: 100%; } .people-pagination { justify-content: flex-start; } .directory-title { scroll-margin-top: 1rem; } }
+@media (forced-colors: active) { .directory-title:focus-visible { outline-color: Highlight; } .people-pagination button:disabled { color: GrayText; } }

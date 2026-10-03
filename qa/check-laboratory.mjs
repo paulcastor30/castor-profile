@@ -14,10 +14,10 @@ try {
  page.on('pageerror',e=>errors.push(e.message));
  page.on('console',e=>{if(e.type()==='error')errors.push(e.text());});
  await visit(`${base}/lab/research`);
- await page.getByRole('status').filter({hasText:'16 thesis groups'}).waitFor();
+ await page.getByRole('status').filter({hasText:'21 thesis groups'}).waitFor();
  const links = await page.locator('.research-card h2 a').evaluateAll(es=>es.map(e=>e.getAttribute('href')));
- assert.equal(links.length,16);
- for(const [program,cohort,count] of [['MS','',4],['BS','',12],['','2026',8],['','2025',7],['','current',1],['MS','current',0]]) {
+ assert.equal(links.length,21);
+ for(const [program,cohort,count] of [['MS','',5],['BS','',16],['','2026',8],['','2025',7],['','current',6],['MS','2025',0]]) {
   await page.getByLabel('Program',{exact:true}).selectOption(program);
   await page.getByLabel('Researcher group',{exact:true}).selectOption(cohort);
   assert.equal(await page.locator('.research-card').count(),count);
@@ -26,7 +26,7 @@ try {
  }
  await page.getByRole('heading',{name:'No groups match these filters'}).waitFor();
  await page.getByRole('button',{name:'Show all research'}).click();
- assert.equal(await page.locator('.research-card').count(),16);
+ assert.equal(await page.locator('.research-card').count(),21);
  let researchers=0,outputs=0;
  for(const link of links) {
   await visit(base+link);
@@ -43,11 +43,11 @@ try {
   assert(html.includes('Official thesis title'),'Missing initial HTML content');
   assert(html.includes(`href="https://paulrodolfcastor.vercel.app${link}"`),'Wrong canonical');
  }
- assert.equal(researchers,40); assert.equal(outputs,5);
+ assert.equal(researchers,53); assert.equal(outputs,10);
  await visit(`${base}/lab/people`);
- assert.equal(await page.locator('.researcher-card').count(),40);
- assert.equal(await page.locator('.researcher-card img').count(),36);
- assert.equal(await page.locator('.lab-head img').count(),1);
+ assert.equal(await page.locator('.people-group').count(),6);
+ assert.equal(await page.locator('.people-portraits[open]').count(),0);
+ assert.equal(await page.locator('.lab-head img').count(),2);
  const mail = await page.locator('a[href^="mailto:"]').evaluateAll(es=>es.map(e=>e.getAttribute('href')));
  assert(mail.every(h=>h.includes('paulrodolf.castor@')||h.includes('applerose.alce@')));
  await page.getByRole('navigation').getByRole('link',{name:'Contact',exact:true}).click();
@@ -75,7 +75,7 @@ try {
  await page.getByRole('link',{name:'Paul Castor’s personal portfolio',exact:true}).click();
  await page.getByRole('heading',{name:'Hi, I’m Paul'}).waitFor();
  assert.deepEqual(errors,[]);
- reports.push({journeys:'16 group URLs; 40 researchers; 5 outputs with separate published, accepted, and conference-paper labels; filters, shared URLs, contact copying and fallback, skip links, route focus, portfolio return',status:'passed'});
+ reports.push({journeys:'21 group URLs; 53 group memberships; 10 outputs with separate published, accepted, and conference-paper labels; filters, shared URLs, contact copying and fallback, skip links, route focus, portfolio return',status:'passed'});
  await context.close();
  const routes=['/lab','/lab/research','/lab/people',links.find(l=>l.includes('goat')), '/lab/contact'];
  for(const scenario of [{name:'phone',width:390,height:900},{name:'desktop',width:1440,height:900},{name:'large-text',width:1280,height:900,textScale:2},{name:'reflow',width:320,height:256},{name:'forced-colors',width:390,height:900,forcedColors:'active'}]) {

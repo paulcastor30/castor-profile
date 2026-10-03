@@ -8,7 +8,7 @@ try{
  const page=await browser.newPage({viewport:{width:1440,height:900}});
  for(const route of ['/lab','/lab/research','/lab/people','/lab/research/goat-geofencing','/lab/contact']){
   await page.goto(base+route);await page.waitForLoadState('networkidle');
-  const expected=await page.locator("a,button,input,select").count();
+  const expected=await page.locator("a,button,input,select,summary").evaluateAll(es=>es.filter(e=>e.getClientRects().length&&!e.disabled).length);
   const seen=new Set();
   for(let i=0;i<100;i++){
    await page.keyboard.press('Tab');
@@ -23,7 +23,7 @@ try{
  const staticPage=await browser.newPage({javaScriptEnabled:false});
  const sitemap=await readFile('public/sitemap.xml','utf8');
  const urls=[...sitemap.matchAll(/<loc>(.*?)<\/loc>/g)].map(m=>m[1]);
- assert.equal(urls.length,21);
+ assert.equal(urls.length,26);
  for(const url of urls){
   const route=new URL(url).pathname;
   const response=await staticPage.goto(base+route);
@@ -31,6 +31,6 @@ try{
   assert.equal(await staticPage.locator('h1').count(),1);
   assert.equal(await staticPage.locator('link[rel="canonical"]').getAttribute('href'),url);
  }
- reports.push({check:'21 initial HTML pages without JavaScript',status:'passed'});
+ reports.push({check:'26 initial HTML pages without JavaScript',status:'passed'});
  await writeFile('qa/lab-keyboard-results.json',JSON.stringify(reports,null,2));console.log(JSON.stringify(reports));
 }finally{await browser.close();}

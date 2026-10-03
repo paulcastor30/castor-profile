@@ -11,6 +11,14 @@ try{
   p.on('pageerror',e=>errors.push(e.message));
   await p.goto(base);await p.waitForLoadState('networkidle');
   assert.equal(await p.locator('.featured-work .work-card').count(),3);
+  assert.equal(await p.locator('#projects').getByText('Research period: August 2025 – May 2026',{exact:true}).count(),2);
+  assert.equal(await p.locator('#projects').getByText('Research period: August 2024 – May 2025',{exact:true}).count(),2);
+  const extra=p.locator('summary').filter({hasText:'More engineering projects'});
+  await extra.focus();await p.keyboard.press('Enter');
+  await p.locator('.additional-work').getByRole('heading',{name:'Calamansi disease detection',exact:true}).waitFor();
+  await p.locator('.additional-work').getByRole('heading',{name:'Fish transport temperature monitoring',exact:true}).waitFor();
+  assert.equal(await p.getByRole('link',{name:'Meet the calamansi disease detection team'}).getAttribute('href'),'/lab/research/calamansi-disease');
+  assert.equal(await p.getByRole('link',{name:'Meet the fish transport temperature monitoring team'}).getAttribute('href'),'/lab/research/fish-container-temperature');
   assert.equal(await p.locator('.featured-work').getByText('My role: thesis adviser',{exact:true}).count(),2);
   assert.equal(await p.locator('.background-details').evaluate(e=>e.open),false);
   const papers=p.locator('details').filter({has:p.locator('summary').filter({hasText:'Research publications'})}).first();

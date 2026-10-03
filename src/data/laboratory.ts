@@ -1,3 +1,5 @@
+import { publications, conferencePapers } from "./research";
+
 export type ResearchOutput = {
   title: string;
   authors: string;
@@ -15,6 +17,7 @@ export type ThesisGroup = {
   program: "MS" | "BS";
   adviser: string;
   coAdviser: string | null;
+  additionalCoAdvisers?: string[];
   researchers: string[];
   graduationYear: number | null;
   outputs: ResearchOutput[];
@@ -40,7 +43,7 @@ export const labHeads = [
 
 // Graduation describes the researchers, not the publication or completion status of a thesis.
 // Add research outputs only after the group association and acceptance/publication status are confirmed.
-export const thesisGroups: ThesisGroup[] = [
+const groupRecords: ThesisGroup[] = [
   {
     "slug": "pedestrian-warning",
     "shortTitle": "Portable pedestrian warning system",
@@ -81,15 +84,7 @@ export const thesisGroups: ThesisGroup[] = [
       "Mark Joceph A. Apao"
     ],
     "graduationYear": 2026,
-    "outputs": [
-      {
-        "title": "Designing and Developing a Hyperlocal Air Quality Monitoring System for Philippine Urban Environments",
-        "authors": "Apao, M. J. A., Castor, P. R. P., & Galido, A. P.",
-        "venue": "6th International Conference on Novel & Intelligent Digital Systems (NiDS 2026), Athens, Greece, September 24–26, 2026.",
-        "year": 2026,
-        "status": "Conference paper"
-      }
-    ]
+    "outputs": []
   },
   {
     "slug": "cacao-disease",
@@ -103,16 +98,7 @@ export const thesisGroups: ThesisGroup[] = [
       "Neil Christian P. Balayon"
     ],
     "graduationYear": 2026,
-    "outputs": [
-      {
-        "title": "AI-based disease detection for cacao black pod rot (p. palmivora): a scoping review",
-        "authors": "Balayon, N. C. P., Castor, P. R. P., & Galido, A. P.",
-        "venue": "Procedia Computer Science, 284, 1150–1157.",
-        "year": 2026,
-        "url": "https://doi.org/10.1016/j.procs.2026.07.102",
-        "status": "Published"
-      }
-    ]
+    "outputs": []
   },
   {
     "slug": "smart-shelf",
@@ -192,15 +178,7 @@ export const thesisGroups: ThesisGroup[] = [
       "Israfeel Mikhail A. Tagorda"
     ],
     "graduationYear": 2026,
-    "outputs": [
-      {
-        "title": "Geo-Goat: Evaluation of a LoRaWAN-Enabled Geofencing Collar for Smallholder Goat Monitoring",
-        "authors": "Escolano, M. J. J., Tagorda, I. M. A., Tenecio, Y. C. C., Alce, A. R. B., & Castor, P. R. P.",
-        "venue": "2026 13th International Conference on Electrical Engineering, Computer Science and Informatics (EECSI), Yogyakarta, Indonesia, September 2–3, 2026.",
-        "year": 2026,
-        "status": "Accepted"
-      }
-    ]
+    "outputs": []
   },
   {
     "slug": "fish-container-temperature",
@@ -243,7 +221,7 @@ export const thesisGroups: ThesisGroup[] = [
     "adviser": "Apple Rose B. Alce",
     "coAdviser": "Paul Rodolf P. Castor",
     "researchers": [
-      "Crischan Larita",
+      "Crischan G. Larita",
       "Errol Jade Carcedo",
       "Kirk Zyke Dream Gentiles"
     ],
@@ -280,15 +258,7 @@ export const thesisGroups: ThesisGroup[] = [
       "Jevon Karl A. Tuba"
     ],
     "graduationYear": 2025,
-    "outputs": [
-      {
-        "title": "Embedded IoT-Based Real-Time Room-Level Energy Monitoring, Load Control and Automated Billing System",
-        "authors": "Alce, A. R. B., Shanmugam, M., Torregoza, P. B. D., Zapatos, D. K. G., Tuba, J. K. A., Castor, P. R. P., & Zaman, H. B.",
-        "venue": "2026 IEEE International Conference on Computing (ICOCO), Langkawi, Kedah, Malaysia, October 12–14, 2026.",
-        "year": 2026,
-        "status": "Conference paper"
-      }
-    ]
+    "outputs": []
   },
   {
     "slug": "sign-language-headset",
@@ -304,15 +274,7 @@ export const thesisGroups: ThesisGroup[] = [
       "Generyll Rose Jalbuna"
     ],
     "graduationYear": 2025,
-    "outputs": [
-      {
-        "title": "Development and Evaluation of a Wearable Headband-Based ASL Letter Recognition Prototype: A Pilot Feasibility, Usability, and Acceptance Study",
-        "authors": "Narvasa, D. J. A., Colao, J. O. T., Jalbuna, G. R. C., Castor, P. R. P., & Alce, A. R. B.",
-        "venue": "6th International Conference on Novel & Intelligent Digital Systems (NiDS 2026), Athens, Greece, September 24–26, 2026.",
-        "year": 2026,
-        "status": "Accepted"
-      }
-    ]
+    "outputs": []
   },
   {
     "slug": "document-delivery",
@@ -329,8 +291,132 @@ export const thesisGroups: ThesisGroup[] = [
     ],
     "graduationYear": 2025,
     "outputs": []
+  },
+  {
+    "slug": "rice-tungro",
+    "shortTitle": "Rice tungro disease detection",
+    "title": "Real-Time Detection of Rice Tungro Disease Using Attention-Enhanced MobileNetV3 on an Edge Computing Platform",
+    "summary": "An ongoing project using a small computer and image recognition to detect rice tungro disease.",
+    "program": "MS",
+    "adviser": "Harreez Villaruz-Quimque",
+    "coAdviser": "Paul Rodolf P. Castor",
+    "additionalCoAdvisers": [
+      "Apple Rose B. Alce"
+    ],
+    "researchers": [
+      "Crischan G. Larita"
+    ],
+    "graduationYear": null,
+    "outputs": []
+  },
+  {
+    "slug": "bell-pepper-aphid-damage",
+    "shortTitle": "Aphid damage detection in bell peppers",
+    "title": "Development of an Edge-IoT-Based Aphid Damage Detection using YOLOv8n and Offline Monitoring using Flask Web Interface for Bell Pepper (Capsicum annuum) on a Raspberry Pi 5",
+    "summary": "An ongoing project using image recognition to detect aphid damage in bell peppers, with a monitoring page that works offline.",
+    "program": "BS",
+    "adviser": "Paul Rodolf P. Castor",
+    "coAdviser": "Apple Rose B. Alce",
+    "additionalCoAdvisers": [
+      "Dr. Slamet Riyadi"
+    ],
+    "researchers": [
+      "Tristan E. Listanco",
+      "Shanice Reih H. Tanque",
+      "Phoebien D. Cañete"
+    ],
+    "graduationYear": null,
+    "outputs": []
+  },
+  {
+    "slug": "smart-goat-profiling",
+    "shortTitle": "Goat profiling and direct trading",
+    "title": "Smart G-ID: Design and Development of a Goat Profiling and Trading System for Direct Farmer-to-Consumer Transactions",
+    "summary": "An ongoing system for recording goat information and supporting direct transactions between farmers and consumers.",
+    "program": "BS",
+    "adviser": "Dr. Ernesto E. Empig, DSDS",
+    "coAdviser": "Paul Rodolf P. Castor",
+    "researchers": [
+      "Princess April E. Castillo",
+      "John Benedict D. Bernal",
+      "Andrew Earl L. Andres"
+    ],
+    "graduationYear": null,
+    "outputs": []
+  },
+  {
+    "slug": "geosentry-landslide-warning",
+    "shortTitle": "Landslide monitoring and early warnings",
+    "title": "GeoSentry: An IoT-based Landslide Monitoring and Early Warning System using Explainable AI",
+    "summary": "An ongoing project using connected sensors and artificial intelligence to monitor landslide conditions and support early warnings.",
+    "program": "BS",
+    "adviser": "Paul Rodolf P. Castor",
+    "coAdviser": "Dr. Ganapathy Pattukandan Ganapathy",
+    "additionalCoAdvisers": [
+      "Dr. Slamet Riyadi"
+    ],
+    "researchers": [
+      "Renato G. Beroy",
+      "Sherie Grace L. Lupoz",
+      "Arianne G. Mecarsos"
+    ],
+    "graduationYear": null,
+    "outputs": []
+  },
+  {
+    "slug": "carbon-dioxide-adsorption",
+    "shortTitle": "Carbon dioxide monitoring and adsorption",
+    "title": "Development of a Real-Time Carbon Dioxide Monitoring System Integrated with a Zeolite-Based Adsorption Bed: A Pilot Study",
+    "summary": "An ongoing pilot study combining carbon dioxide monitoring with a zeolite material that captures gas on its surface.",
+    "program": "BS",
+    "adviser": "Paul Rodolf P. Castor",
+    "coAdviser": "Ralf Ruffel M. Abarca",
+    "researchers": [
+      "Karl Vincent C. Remo",
+      "Cassandra Khan P. Mendoza",
+      "Khara Myka T. Concepcion"
+    ],
+    "graduationYear": null,
+    "outputs": []
   }
 ];
+
+// Explicit project associations; citation content and status come from one shared record.
+const outputAssignments: Record<string, string[]> = {
+  "hyperlocal-monitoring": [
+    "Designing and Developing a Hyperlocal Air Quality Monitoring System for Philippine Urban Environments"
+  ],
+  "cacao-disease": [
+    "AI-based disease detection for cacao black pod rot (p. palmivora): a scoping review"
+  ],
+  "goat-geofencing": [
+    "Geo-Goat: Evaluation of a LoRaWAN-Enabled Geofencing Collar for Smallholder Goat Monitoring"
+  ],
+  "energy-management": [
+    "Embedded IoT-Based Real-Time Room-Level Energy Monitoring, Load Control and Automated Billing System"
+  ],
+  "sign-language-headset": [
+    "Development and Evaluation of a Wearable Headband-Based ASL Letter Recognition Prototype: A Pilot Feasibility, Usability, and Acceptance Study"
+  ],
+  "rice-tungro": [
+    "Design and Development of a MobileNetV3-Based Rice Tungro Disease Detection Model for Raspberry Pi 5 Edge",
+    "Bridging the Tungro Gap: A Systematic Literature Review of Edge-Optimized Deep Learning for Rice Disease Detection"
+  ],
+  "smart-goat-profiling": [
+    "Internet of Things and Sensor-Based Systems for Livestock Profiling: A Systematic Literature Review",
+    "A Requirement-Driven Architecture for Smart G-ID: Design and Development of a Goat Profiling and Trading System for Direct Farmer-to-Consumer Transactions"
+  ],
+  "bell-pepper-aphid-damage": [
+    "Computational Approaches, Evidence Maturity, and Research Gaps in Bell-Pepper Disease and Pest Monitoring: A Systematic Literature Review"
+  ]
+};
+const paperRecords = [...publications, ...conferencePapers];
+function findOutput(title: string): ResearchOutput {
+  const paper = paperRecords.find(item => item.title === title);
+  if (!paper) throw new Error(`Missing research citation: ${title}`);
+  return paper;
+}
+export const thesisGroups: ThesisGroup[] = groupRecords.map(group => ({ ...group, outputs: (outputAssignments[group.slug] || []).map(findOutput) }));
 
 export const programName = (program: ThesisGroup["program"]) => `${program} in Computer Applications`;
 export const groupStatus = (group: ThesisGroup) => group.graduationYear ? `Graduates · Class of ${group.graduationYear}` : "Current researchers · Ongoing project";
