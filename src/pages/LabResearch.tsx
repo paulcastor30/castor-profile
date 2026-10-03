@@ -19,11 +19,11 @@ export default function LabResearch() {
       <p className="lab-explanation">BS means Bachelor of Science; MS means Master of Science. Class of 2025 and Class of 2026 identify researchers who have graduated.</p>
       <div className="research-filters" role="group" aria-label="Optional research filters">
         <div><label htmlFor="research-program">Program</label><select id="research-program" value={program} onChange={event => updateFilter("program", event.target.value)}><option value="">All programs</option><option value="BS">BS in Computer Applications</option><option value="MS">MS in Computer Applications</option></select></div>
-        <div><label htmlFor="research-group">Researcher group</label><select id="research-group" value={cohort} onChange={event => updateFilter("group", event.target.value)}><option value="">All groups</option><option value="2026">Graduates · Class of 2026</option><option value="2025">Graduates · Class of 2025</option><option value="current">Current researchers</option></select></div>
+        <div><label htmlFor="research-group">Status / graduation class</label><select id="research-group" value={cohort} onChange={event => updateFilter("group", event.target.value)}><option value="">All groups</option><option value="2026">Graduates · Class of 2026</option><option value="2025">Graduates · Class of 2025</option><option value="current">Current researchers</option></select></div>
         <button className="text-action" type="button" onClick={() => setParams({}, { replace: true })}>Show all research</button>
       </div>
       <p className="research-count" role="status" aria-live="polite" aria-atomic="true">{visible.length} {visible.length === 1 ? "thesis group" : "thesis groups"}</p>
-      {visible.length ? <div className="research-grid">{visible.map(group => <ResearchCard key={group.slug} group={group} />)}</div> : <div className="empty-results"><h2>No groups match these filters</h2><p>Choose another program or researcher group, or select “Show all research”.</p></div>}
+      {visible.length ? <div className="research-grid">{visible.map(group => <ResearchCard key={group.slug} group={group} />)}</div> : <div className="empty-results"><h2>No groups match these filters</h2><p>Choose another program or graduation class, or select “Show all research”.</p></div>}
     </section>
   );
 }

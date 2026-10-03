@@ -11,7 +11,7 @@ export default function LabHome() {
         <h1>{laboratory.name}</h1>
         <p className="lab-lede">Exploring intelligent devices and connected systems that respond to the world around us.</p>
         <p className="lab-explanation">Edge intelligence means processing information close to where it is collected, such as on a sensor or a small computer. AIoT brings artificial intelligence together with connected devices.</p>
-        <div className="actions"><Link className="primary-action" to="/lab/research">Explore the research</Link><Link className="text-action" to="/lab/contact">Contact the lab heads</Link></div>
+        <p className="lab-explanation">We guide undergraduate and master’s thesis research in Bachelor of Science in Computer Applications (BSCA) and Master of Science in Computer Applications (MSCA).</p><div className="actions"><Link className="primary-action" to="/lab/research">Explore the research</Link><Link className="text-action" to="/lab/contact">Contact the lab heads</Link></div>
       </section>
       <section className="portfolio-section" aria-labelledby="heads-title">
         <div className="portfolio-container">

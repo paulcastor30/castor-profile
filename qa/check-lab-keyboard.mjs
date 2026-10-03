@@ -10,9 +10,9 @@ try{
   await page.goto(base+route);await page.waitForLoadState('networkidle');
   const expected=await page.locator("a,button,input,select,summary").evaluateAll(es=>es.filter(e=>e.getClientRects().length&&!e.disabled).length);
   const seen=new Set();
-  for(let i=0;i<100;i++){
+  for(let i=0;i<200;i++){
    await page.keyboard.press('Tab');
-   const f=await page.evaluate(()=>{const e=document.activeElement,r=e.getBoundingClientRect(),s=getComputedStyle(e),h=document.querySelector('header').getBoundingClientRect();return {tag:e.tagName,key:`${e.tagName}:${e.id}:${e.getAttribute('href')}:${e.textContent}`,top:r.top,bottom:r.bottom,outline:parseFloat(s.outlineWidth),style:s.outlineStyle,inHeader:!!e.closest('header'),skip:e.classList.contains('skip-link'),headerBottom:h.bottom,label:e.textContent};});
+   const f=await page.evaluate(()=>{const e=document.activeElement,r=e.getBoundingClientRect(),s=getComputedStyle(e),h=document.querySelector('header').getBoundingClientRect();return {tag:e.tagName,key:[...document.querySelectorAll("a,button,input,select,summary")].indexOf(e),top:r.top,bottom:r.bottom,outline:parseFloat(s.outlineWidth),style:s.outlineStyle,inHeader:!!e.closest('header'),skip:e.classList.contains('skip-link'),headerBottom:h.bottom,label:e.textContent};});
    if(f.tag==='BODY'&&seen.size>0)break;
    if(seen.has(f.key))break;seen.add(f.key);
    assert(f.outline>=2&&f.style!=='none',`Invisible focus ${route} ${f.label}`);

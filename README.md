@@ -122,3 +122,27 @@ Research outputs are assigned by explicit group/title matches in `src/data/labor
 The People directory shows six groups per page with researcher names visible and portraits inside native disclosures. Search matches names and group titles without requiring accents. Program and graduation/current filters, clear controls, result counts, and previous/next buttons keep the directory usable as it grows. Filters and page state use `q`, `program`, `group`, and `page` URL parameters. Page changes focus the directory heading; filtering preserves the active control. All research detail pages remain individually available in initial HTML.
 
 Run `node qa/check-directory.mjs` with the existing browser/axe environment settings to check search, filters, pagination, membership totals, output counts, native disclosures, and collapsed/expanded accessibility layouts. Generated results and screenshots are ignored by Git.
+
+
+## Individual People directory (current design)
+
+This replaces the earlier six-thesis-group People layout. `src/data/people.ts` derives a unique person directory from the existing thesis memberships; it does not create new affiliations. All 52 people appear once across five pages, with 53 program memberships retained. Twelve compact entries per page show portraits directly. Forty unique researcher photos are displayed; twelve people retain clean boxes. Group detail pages retain their original full researcher cards.
+
+Both the lab introduction and People explicitly state BSCA and MSCA supervision. People has independent program and status/graduation-class filters plus accent-insensitive name/topic search. Default ordering is current researchers first, then newest graduation class, with MSCA and BSCA headings and alphabetical surname order within each category. A person with two memberships appears once with both records; a program/class filter shows only matching memberships. Result counts represent unique people. URL parameters remain q/program/group/page. Missing photos and unrelated academic records are unchanged.
+
+Co-head email links remain visible, Paul's profile links to his personal portfolio, and a closing collaboration invitation provides direct contact. The directory does not publish student email addresses. `qa/check-directory.mjs` now verifies individual counts, academic grouping, surname ordering, combined filters, preserved dual memberships, pagination and contact/research controls under ten layout/accessibility scenarios.
+
+
+## Owner-requested co-head restoration
+
+The People co-head cards retain the previous name, portrait, “Co-head · Master of Science” line, and email link. The added faculty-rank line and personal-portfolio link inside Paul's card were removed at the owner's request. Further refinements should preserve this area unless explicitly requested. Directory instructions have been shortened while preserving program explanations, sorting, filters, portraits and contact.
+
+
+## Scrollable People directory (current owner preference)
+
+People now renders all 52 unique researchers on a single continuous page. Previous/Next controls and page numbers are removed. Old page query parameters no longer hide any records. Search and independent BSCA/MSCA and graduation/current filters remain; current researchers appear first, followed by newest graduation class, with program headings and alphabetical surnames. Compact visible portraits, missing-photo boxes, research links, and restored co-head cards are retained. Images remain lazy-loaded. Program and class headings make the long page navigable; direct lab contact remains in the header.
+
+
+## Navigation refinement for the continuous directory
+
+People retains the complete scrollable roster and the owner-protected co-head cards. Section links below the filters jump to the visible current/program/class headings without hiding people. Headings receive focus and clear the navigation header; a closing link returns to researcher search. The collaboration block also links to Contact's visible/copyable email addresses for visitors whose mail app links do not work. Research and People use the same “Status / graduation class” filter label. Academic ordering compares current status, graduation year and program directly, avoiding a fixed future-year cutoff.

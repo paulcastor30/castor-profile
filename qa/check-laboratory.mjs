@@ -19,7 +19,7 @@ try {
  assert.equal(links.length,21);
  for(const [program,cohort,count] of [['MS','',5],['BS','',16],['','2026',8],['','2025',7],['','current',6],['MS','2025',0]]) {
   await page.getByLabel('Program',{exact:true}).selectOption(program);
-  await page.getByLabel('Researcher group',{exact:true}).selectOption(cohort);
+  await page.getByLabel('Status / graduation class',{exact:true}).selectOption(cohort);
   assert.equal(await page.locator('.research-card').count(),count);
   await page.reload();
   assert.equal(await page.locator('.research-card').count(),count);
@@ -45,8 +45,8 @@ try {
  }
  assert.equal(researchers,53); assert.equal(outputs,10);
  await visit(`${base}/lab/people`);
- assert.equal(await page.locator('.people-group').count(),6);
- assert.equal(await page.locator('.people-portraits[open]').count(),0);
+ assert.equal(await page.locator('.person-entry').count(),52);
+ assert.equal(await page.locator('.people-portraits').count(),0);
  assert.equal(await page.locator('.lab-head img').count(),2);
  const mail = await page.locator('a[href^="mailto:"]').evaluateAll(es=>es.map(e=>e.getAttribute('href')));
  assert(mail.every(h=>h.includes('paulrodolf.castor@')||h.includes('applerose.alce@')));
