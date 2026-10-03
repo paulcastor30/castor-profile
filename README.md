@@ -94,9 +94,9 @@ Run `node qa/check-cv-update.mjs` against a preview to verify the updated record
 
 Original uploads remain in `public/images/researchers/` and `public/images/lab head/`, with the supplied folder names unchanged. Only explicitly matched, optimized web copies under `public/images/portraits/` are deployed. Their displayed names and asset locations are listed in `src/data/portraits.ts`. Existing thesis records retain their groups; uploaded photos alone do not establish a new research group or degree record.
 
-The current match includes portraits for 40 of the 52 unique researchers and both lab heads. There are 53 group memberships because Larita appears in both a graduated BS group and an ongoing MS group. Twelve researcher cards retain empty boxes. Paul Castor's portrait also appears in the personal About section. The owner confirmed that the Ral Angelo folder matches the thesis researcher; the directory now uses the folder spelling, Ral Angelo S. Lluisma. Photos for Selena B. Suario, Marie Glo C. Generalao, and Raymond M. Valdepeñas remain unassigned because no matching thesis-group record has been supplied.
+The current match includes portraits for 45 of the 52 unique researchers and both lab heads. There are 53 group memberships because Larita appears in both a graduated BS group and an ongoing MS group. Seven researcher cards retain empty boxes. Paul Castor's portrait also appears in the personal About section. The owner confirmed that the Ral Angelo folder matches the thesis researcher; the directory now uses the folder spelling, Ral Angelo S. Lluisma. Photos for Selena B. Suario, Marie Glo C. Generalao, and Raymond M. Valdepeñas remain unassigned because no matching thesis-group record has been supplied.
 
-Images use their original composition, with no CSS cropping or face changes. Smaller WebP copies remove unnecessary metadata, reserve layout space, decode asynchronously, and load lazily. Adjacent names identify each person, so portraits use empty alternative text and are excluded from repeated screen-reader announcements. An image that fails to load returns to the clean frame. Lab-head photos are shown only when available.
+Original uploads are preserved. Web images fill consistent frames, with per-photo CSS framing where needed; faces are not altered. Smaller WebP copies remove unnecessary metadata, reserve layout space, decode asynchronously, and load lazily. Adjacent names identify each person, so portraits use empty alternative text and are excluded from repeated screen-reader announcements. An image that fails to load returns to the clean frame. Lab-head photos are shown only when available.
 
 When adding a photo later, create a small web copy in `public/images/portraits/` and add its exact existing display name, URL, and dimensions to `src/data/portraits.ts`. Test with `node qa/check-portraits.mjs`. The build excludes the original upload folders and desktop metadata from `dist`.
 
@@ -184,3 +184,7 @@ Official references: https://developers.google.com/search/docs/appearance/struct
 ## Dedicated profile removal
 
 The two added lab-head profile routes, page/data files, metadata entries, navigation links and sitemap URLs have been removed. Structured Person identities reference the existing portfolio and People page instead. The lab remains part of the personal portfolio. Existing search titles/descriptions, breadcrumbs, initial HTML, researcher names, canonical URLs and generated 26-page sitemap remain.
+
+## Latest portrait update — 3 October 2026
+
+Added Renato G. Beroy, Sherie Grace L. Lupoz, and Arianne G. Mecarsos to their existing GeoSentry records. The People directory remains fully scrollable, with 45 researcher portraits and seven clean empty frames. There are 47 web portrait assets including the two lab heads. These totals supersede earlier dated review entries. Renato has individual CSS framing; all three original uploads remain unchanged.

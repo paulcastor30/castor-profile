@@ -1,6 +1,9 @@
 // Explicitly matched to the owner-supplied portrait folders.
 export type PortraitAsset = { src: string; width: number; height: number; framing?: { scale: number; origin: string } };
 export const portraits: Record<string, PortraitAsset> = {
+  "Renato G. Beroy": { src: "/images/portraits/renato-g-beroy.webp", width: 467, height: 700, framing: { scale: 1.2, origin: "50% 20%" } },
+  "Sherie Grace L. Lupoz": { src: "/images/portraits/sherie-grace-l-lupoz.webp", width: 560, height: 510 },
+  "Arianne G. Mecarsos": { src: "/images/portraits/arianne-g-mecarsos.webp", width: 560, height: 560 },
   "John Benedict D. Bernal": { src: "/images/portraits/john-benedict-d-bernal.webp", width: 525, height: 700, framing: { scale: 1.35, origin: "50% 0%" } },
   "Princess April E. Castillo": { src: "/images/portraits/princess-april-e-castillo.webp", width: 525, height: 700, framing: { scale: 1.5, origin: "50% 60%" } },
   "Apple Rose B. Alce": {
