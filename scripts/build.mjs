@@ -1,5 +1,5 @@
 import { spawnSync } from 'node:child_process';
-import { readFile, writeFile, mkdir, rm } from 'node:fs/promises';
+import { readFile, writeFile, mkdir, rm, readdir } from 'node:fs/promises';
 import { dirname, resolve } from 'node:path';
 
 const vite = resolve('node_modules/vite/bin/vite.js');
@@ -8,6 +8,16 @@ function build(args) {
   if (result.status !== 0) process.exit(result.status || 1);
 }
 build(['build']);
+// Ship only matched web portraits; leave original uploads in the owner's source folder.
+for (const folder of ['researchers', 'lab head']) await rm(`dist/images/${folder}`, { recursive: true, force: true });
+async function removeDesktopMetadata(folder) {
+  for (const entry of await readdir(folder, { withFileTypes: true })) {
+    const path = `${folder}/${entry.name}`;
+    if (entry.isDirectory()) await removeDesktopMetadata(path);
+    else if (entry.name === '.DS_Store') await rm(path);
+  }
+}
+await removeDesktopMetadata('dist');
 build(['build', '--ssr', 'src/prerender.tsx', '--outDir', '.prerender']);
 const { renderPage, paths } = await import('../.prerender/prerender.js');
 const shell = await readFile('dist/index.html', 'utf8');

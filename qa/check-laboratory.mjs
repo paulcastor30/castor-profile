@@ -46,7 +46,8 @@ try {
  assert.equal(researchers,40); assert.equal(outputs,5);
  await visit(`${base}/lab/people`);
  assert.equal(await page.locator('.researcher-card').count(),40);
- assert.equal(await page.locator('.portrait-placeholder img').count(),0);
+ assert.equal(await page.locator('.researcher-card img').count(),36);
+ assert.equal(await page.locator('.lab-head img').count(),1);
  const mail = await page.locator('a[href^="mailto:"]').evaluateAll(es=>es.map(e=>e.getAttribute('href')));
  assert(mail.every(h=>h.includes('paulrodolf.castor@')||h.includes('applerose.alce@')));
  await page.getByRole('navigation').getByRole('link',{name:'Contact',exact:true}).click();

@@ -1,3 +1,4 @@
+import Portrait from "./Portrait";
 import { Link } from "react-router-dom";
 import { groupStatus, programName, ThesisGroup, laboratory } from "@/data/laboratory";
 
@@ -21,7 +22,7 @@ export function ResearchCard({ group }: { group: ThesisGroup }) {
 export function ResearcherCard({ name, program, year }: { name: string; program: ThesisGroup["program"]; year: number | null }) {
   return (
     <article className="researcher-card">
-      <div className="portrait-placeholder" aria-hidden="true" />
+      <Portrait name={name} />
       <h3>{name}</h3>
       <p>{programName(program)}</p>
       <p>{year ? `Graduated · Class of ${year}` : "Current researcher"}</p>

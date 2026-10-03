@@ -1,3 +1,4 @@
+import Portrait from "@/components/Portrait";
 import { useRef, useState } from "react";
 import { laboratory, labHeads } from "@/data/laboratory";
 import { LabAddress } from "@/components/LabShared";
@@ -11,7 +12,7 @@ function HeadContact({ name, email, id }: { name: string; email: string; id: str
     catch { input.current?.focus(); input.current?.select(); text = `The address for ${name} is selected. Use your device’s Copy command, or Control+C on Windows or Command+C on Mac.`; }
     setMessage(previous => ({ text, count: previous.count + 1 }));
   }
-  return <article className="lab-contact-card"><p className="eyebrow">Lab co-head</p><h2>{name}</h2><label className="email-label" htmlFor={id}>Email address for {name}</label><input id={id} ref={input} className="email-field" type="text" readOnly value={email} spellCheck={false} onFocus={event => event.currentTarget.select()} aria-describedby="lab-email-help" /><div className="actions"><a className="primary-action" href={`mailto:${email}`} aria-describedby="lab-email-help">Email {name}</a><button type="button" className="text-action" onClick={copy}>Copy email for {name}</button></div><p role="status" aria-live="polite" aria-atomic="true" className="copy-message"><span key={message.count}>{message.text}</span></p></article>;
+  return <article className="lab-contact-card"><Portrait name={name} className="head-portrait" optional /><p className="eyebrow">Lab co-head</p><h2>{name}</h2><label className="email-label" htmlFor={id}>Email address for {name}</label><input id={id} ref={input} className="email-field" type="text" readOnly value={email} spellCheck={false} onFocus={event => event.currentTarget.select()} aria-describedby="lab-email-help" /><div className="actions"><a className="primary-action" href={`mailto:${email}`} aria-describedby="lab-email-help">Email {name}</a><button type="button" className="text-action" onClick={copy}>Copy email for {name}</button></div><p role="status" aria-live="polite" aria-atomic="true" className="copy-message"><span key={message.count}>{message.text}</span></p></article>;
 }
 
 export default function LabContact() {

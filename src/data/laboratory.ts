@@ -124,7 +124,7 @@ export const thesisGroups: ThesisGroup[] = [
     "coAdviser": null,
     "researchers": [
       "Jess Michael Padogdog",
-      "Ral Angelo Llusima",
+      "Ral Angelo S. Lluisma",
       "Fatima Tahira Asaali"
     ],
     "graduationYear": 2026,

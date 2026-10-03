@@ -89,3 +89,13 @@ Recent featured work highlights goat monitoring and wearable sign-language lette
 The CV's private phone number and ambiguous GPA are omitted. The original document is not copied into the public website. The public contact section lists the CV's spoken languages: English, Filipino, and Cebuano.
 
 Run `node qa/check-cv-update.mjs` against a preview to verify the updated record and disclosures at four screen widths. Generated `qa/cv-results.json` and screenshots are ignored by Git.
+
+## Researcher and lab-head portraits
+
+Original uploads remain in `public/images/researchers/` and `public/images/lab head/`, with the supplied folder names unchanged. Only explicitly matched, optimized web copies under `public/images/portraits/` are deployed. Their displayed names and asset locations are listed in `src/data/portraits.ts`. Existing thesis records retain their groups; uploaded photos alone do not establish a new research group or degree record.
+
+The current match includes 36 of the 40 researchers and Apple Rose B. Alce. Paul Castor's head card remains text-only, and four researchers keep their original empty boxes. The owner confirmed that the Ral Angelo folder matches the thesis researcher; the directory now uses the folder spelling, Ral Angelo S. Lluisma. Photos for Selena B. Suario, Marie Glo C. Generalao, and Raymond M. Valdepeñas remain unassigned because no matching thesis-group record has been supplied.
+
+Images use their original composition, with no CSS cropping or face changes. Smaller WebP copies remove unnecessary metadata, reserve layout space, decode asynchronously, and load lazily. Adjacent names identify each person, so portraits use empty alternative text and are excluded from repeated screen-reader announcements. An image that fails to load returns to the clean frame. Lab-head photos are shown only when available.
+
+When adding a photo later, create a small web copy in `public/images/portraits/` and add its exact existing display name, URL, and dimensions to `src/data/portraits.ts`. Test with `node qa/check-portraits.mjs`. The build excludes the original upload folders and desktop metadata from `dist`.

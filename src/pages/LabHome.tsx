@@ -1,3 +1,4 @@
+import Portrait from "@/components/Portrait";
 import { Link } from "react-router-dom";
 import { laboratory, labHeads } from "@/data/laboratory";
 import { LabAddress } from "@/components/LabShared";
@@ -16,7 +17,7 @@ export default function LabHome() {
         <div className="portfolio-container">
           <p className="eyebrow">Faculty leadership</p><h2 id="heads-title">Lab co-heads</h2>
           <div className="lab-head-grid">
-            {labHeads.map(head => <article className="lab-head" key={head.name}><p className="eyebrow">Lab co-head</p><h3>{head.name}</h3><p>Master of Science</p><a className="text-link" href={`mailto:${head.email}`}>Email {head.name}</a></article>)}
+            {labHeads.map(head => <article className="lab-head" key={head.name}><Portrait name={head.name} className="head-portrait" optional /><p className="eyebrow">Lab co-head</p><h3>{head.name}</h3><p>Master of Science</p><a className="text-link" href={`mailto:${head.email}`}>Email {head.name}</a></article>)}
           </div>
           <p className="lab-note">Each thesis group lists its own adviser and co-adviser. Lab leadership and thesis supervision are distinct roles.</p>
         </div>
