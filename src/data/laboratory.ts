@@ -383,6 +383,13 @@ const groupRecords: ThesisGroup[] = [
 
 // Explicit project associations; citation content and status come from one shared record.
 const outputAssignments: Record<string, string[]> = {
+  "avian-diversity": [
+    "BirdNET in avian diversity monitoring: capabilities and challenges"
+  ],
+  "pedestrian-warning": [
+    "From problem analysis to design thinking: Developing the SWiPS system for urban pedestrian safety",
+    "ICT-enabled technologies for pedestrian safety: A scoping review"
+  ],
   "hyperlocal-monitoring": [
     "Designing and Developing a Hyperlocal Air Quality Monitoring System for Philippine Urban Environments"
   ],
@@ -410,7 +417,34 @@ const outputAssignments: Record<string, string[]> = {
     "Computational Approaches, Evidence Maturity, and Research Gaps in Bell-Pepper Disease and Pest Monitoring: A Systematic Literature Review"
   ]
 };
-const paperRecords = [...publications, ...conferencePapers];
+// Lab papers are separate from Castor's personal publications: authorship is not implied by lab leadership.
+const labPublications: ResearchOutput[] = [
+  {
+    title: "BirdNET in avian diversity monitoring: capabilities and challenges",
+    authors: "Usman, A. M., Alce, A. R. B., & Galido, A. P.",
+    venue: "Procedia Computer Science, 284, 1215–1223.",
+    year: 2026,
+    status: "Published",
+    url: "https://doi.org/10.1016/j.procs.2026.07.109"
+  },
+  {
+    title: "From problem analysis to design thinking: Developing the SWiPS system for urban pedestrian safety",
+    authors: "Amboang, J. M. M., Alce, A. R. B., & Galido, A. P.",
+    venue: "Procedia Computer Science, 284, 295–301.",
+    year: 2026,
+    status: "Published",
+    url: "https://doi.org/10.1016/j.procs.2026.07.006"
+  },
+  {
+    title: "ICT-enabled technologies for pedestrian safety: A scoping review",
+    authors: "Amboang, J. M., Galido, A., & Alce, A. R. B.",
+    venue: "PACIS 2025 Proceedings, Paper 7.",
+    year: 2025,
+    status: "Published",
+    url: "https://aisel.aisnet.org/pacis2025/iot_smartcity/iot_smartcity/7/"
+  }
+];
+const paperRecords = [...publications, ...conferencePapers, ...labPublications];
 function findOutput(title: string): ResearchOutput {
   const paper = paperRecords.find(item => item.title === title);
   if (!paper) throw new Error(`Missing research citation: ${title}`);
