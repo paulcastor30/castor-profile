@@ -25,7 +25,7 @@ export default function Contact() {
         <div>
           <p className="eyebrow">Say hello</p>
           <h2 id="contact-title">Contact me</h2>
-          <p className="contact-intro">Have a project in mind, a research idea, or a question? I’d be happy to hear from you. You don’t need to know the technical terms to get in touch.</p>
+          <p className="contact-intro">Have a project in mind, a research idea, or a question? I’d be happy to hear from you. You don’t need to know the technical terms to get in touch. A short message with your question or idea is enough.</p>
           <p className="contact-help">You can write to me in English, Filipino, or Cebuano.</p>
         </div>
         <div className="contact-options">

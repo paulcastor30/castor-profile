@@ -362,8 +362,8 @@ html { scroll-behavior: auto; }
 /* Keep the people directory compact while retaining names and optional portraits. */
 .people-filters { flex-wrap: wrap; }
 .people-filters > div { min-width: 0; }
-.people-search { flex: 1 1 18rem; }
-.people-search input { width: 100%; min-height: 44px; padding: .65rem .8rem; border: 1px solid #647567; border-radius: .35rem; background: white; color: #233027; }
+.people-search, .research-search { flex: 1 1 18rem; }
+.people-search input, .research-search input { width: 100%; min-height: 44px; padding: .65rem .8rem; border: 1px solid #647567; border-radius: .35rem; background: white; color: #233027; }
 .directory-title { scroll-margin-top: 7rem; }
 .directory-title:focus-visible { outline: 3px solid #216b56; outline-offset: 5px; }
 .people-group h2 a { display: inline-flex; align-items: center; min-height: 44px; }
@@ -386,8 +386,8 @@ html { scroll-behavior: auto; }
 .person-membership .text-link { padding-inline: 0; }
 @media (max-width: 400px) { .person-entry { grid-template-columns: 3.5rem minmax(0, 1fr); gap: .75rem; } .person-entry .directory-portrait { width: 3.5rem; } }
 
-.people-section-links { display: flex; flex-wrap: wrap; gap: .25rem 1rem; margin-block: 1rem 2rem; }
-.people-section-links > p { flex-basis: 100%; font-weight: 600; }
+.people-section-links, .research-section-links { display: flex; flex-wrap: wrap; gap: .25rem 1rem; margin-block: 1rem 2rem; }
+.people-section-links > p, .research-section-links > p { flex-basis: 100%; font-weight: 600; }
 .people-category > h2 { scroll-margin-top: 7rem; }
 .people-category > h2:focus-visible { outline: 3px solid #216b56; outline-offset: 5px; }
 .project-contact > .text-link { display: flex; width: fit-content; margin-top: 1rem; }

@@ -18,7 +18,7 @@ export default function LabProject() {
       <h2 className="people-section-title">Researchers</h2>
       <div className="researcher-grid">{group.researchers.map(name => <ResearcherCard key={name} name={name} program={group.program} year={group.graduationYear} />)}</div>
       {group.outputs.length > 0 && <section className="research-outputs" aria-labelledby="outputs-title"><h2 id="outputs-title">Research outputs</h2><p>Related papers include original studies and reviews of earlier research. Linked titles open the publisher’s page. Conference papers without a confirmed acceptance or publication are labeled “Conference paper”.</p>{group.outputs.map(output => <article key={output.title}><p className="output-status">{output.status} · {output.year}</p><h3>{output.url ? <a href={output.url}>{output.title}</a> : output.title}</h3><p>{output.authors}</p><p>{output.venue}</p></article>)}</section>}
-      <div className="project-contact"><h2>Questions about this research?</h2><p>You can contact {contact?.name || "either lab head"} to ask about the project or its research outputs.</p><a className="primary-action" href={`mailto:${contact?.email || labHeads[0].email}?subject=${encodeURIComponent(`Question about ${group.shortTitle}`)}`}>Email about {group.shortTitle}</a></div>
+      <div className="project-contact"><h2>Questions about this research?</h2><p>You can contact {contact?.name || "either lab head"} to ask about the project or its research outputs.</p><a className="primary-action" href={`mailto:${contact?.email || labHeads[0].email}?subject=${encodeURIComponent(`Question about ${group.shortTitle}`)}`}>Email about {group.shortTitle}</a><Link className="text-link" to="/lab/contact">View or copy lab email addresses</Link></div>
     </section>
   );
 }

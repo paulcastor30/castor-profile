@@ -200,3 +200,9 @@ Moved the personal portrait into the first introduction and removed its duplicat
 ## Personal portfolio photo preference
 
 The owner prefers a text-only personal portfolio to avoid unnecessary appearance-based judgments. The personal portrait and its reserved layout space have been removed from the homepage. Lab-head and researcher portraits remain on lab pages. Preserve this distinction in future updates.
+
+## Audience and accessibility refinement — 3 October 2026
+
+Preserved the exact personal About laboratory introduction and Laboratory navigation link, the text-only homepage, co-head cards, and scrollable People layout. Research now supports accent-insensitive topic/researcher-name search alongside program/class filters. Stable section links move keyboard focus to the matching heading, helping readers skip to ongoing or graduate research. Project pages link to the lab's copyable email addresses for visitors without a configured email application. Personal Contact reassures visitors that a short question or idea is enough. No credentials, academic records, publication statuses, images or official affiliations were added.
+
+Production build, TypeScript and changed-component lint passed. Search typing focus, combined filters, URL reload, empty-result recovery, heading focus/header clearance and contact fallback journeys passed. Thirty-nine automated accessibility/layout checks (four research-search, 25 lab and ten portfolio layouts) had zero violations. Phone, narrow reflow, enlarged text, high contrast, keyboard navigation, email-copy success/fallback, and all 26 initial HTML pages passed. Research desktop/mobile layouts were visually inspected. This review does not establish ranking gains or replace usability testing with disabled participants.
