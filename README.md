@@ -151,3 +151,8 @@ People retains the complete scrollable roster and the owner-protected co-head ca
 ## Research ordering
 
 Research now uses explicit status/class and program sections: ongoing MSCA, ongoing BSCA, then graduates by newest class with MSCA before BSCA within a class. Projects are alphabetical within each section. Program/cohort filters retain this order and omit empty sections. Card headings are level three below level-two section headings. Graduation cohorts do not establish paper publication status.
+
+
+## Portrait display fitting
+
+At the owner's request, portrait presentation now fills each existing frame using CSS object-fit: cover and object-position: center 20%, replacing the earlier contain setting that created uneven side bands. Display crops favor the upper part of each photo to keep faces visible. Source files and optimized assets are unchanged; no pixels, identities or names were edited. Empty-photo frames and broken-image fallbacks remain. Co-head card content and layout are unchanged.

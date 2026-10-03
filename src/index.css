@@ -357,7 +357,7 @@ html { scroll-behavior: auto; }
 
 /* Portraits supplement visible names and preserve the empty frame for missing photos. */
 .portrait-placeholder { overflow: hidden; display: flex; align-items: center; justify-content: center; }
-.portrait-placeholder img { display: block; width: 100%; height: 100%; object-fit: contain; }
+.portrait-placeholder img { display: block; width: 100%; height: 100%; object-fit: cover; object-position: center 20%; }
 .head-portrait { width: 96px; aspect-ratio: 1; float: right; margin: 0 0 1rem 1rem; }
 @media (max-width: 540px) { .head-portrait { float: none; width: 120px; margin: 0 0 1rem; } }
 

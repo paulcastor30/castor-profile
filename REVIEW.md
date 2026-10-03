@@ -210,3 +210,10 @@ Production build, TypeScript and changed-file lint passed. Directory journeys ve
 At the owner's request, Research now places ongoing groups first and graduates afterward by newest graduation class, separated into MSCA and BSCA sections. Alphabetical project titles provide a predictable order within each section because no project start dates were supplied. Existing filters retain the same ordering. Section headings are level two and project headings level three; existing card appearance and link target sizes are preserved. No group, supervision record or research-output status was altered.
 
 Production build, TypeScript and changed-file lint passed. Research tests verified five section headings in order, alphabetical projects, all 21 group URLs, ten outputs, filters, URL persistence, contact copying/fallback and navigation. Twenty-five lab accessibility/layout scenarios passed with zero automated WCAG A/AA violations and no horizontal overflow. The browser confirmed the ongoing/program headings and descending graduate classes. Changes remain local.
+
+
+## Portrait/frame balance
+
+The supplied example showed visible side bands around two narrower graduation photographs while a wider photo filled its frame. The cause was contain fitting within fixed 4:5 frames. Portraits now fill their existing frames without distortion, with an upper-centered display crop rather than uneven letterboxing. The image files themselves remain unchanged, as do names, card layouts and empty frames.
+
+All 42 matched portrait assets were visually checked together under the new 4:5 fitting; faces remained visible. The local campus-navigation group was inspected in the browser. Production generation passed, and portrait decoding, forty unique directory photos, twelve missing frames, small image assets, redundant-alt handling and broken-image fallback passed. Twenty-five portrait layout/accessibility scenarios passed phone, desktop, 200% text, narrow reflow and forced colors with zero automated WCAG A/AA violations and no horizontal overflow. Changes remain local.
