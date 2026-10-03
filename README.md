@@ -166,3 +166,21 @@ Princess April E. Castillo's uploaded photo is matched to her existing Smart G-I
 ## John Bernal portrait
 
 John Benedict D. Bernal's uploaded photo is matched to his existing People and Smart G-ID records. A 525×700 WebP copy is approximately 61 KB. Display framing emphasizes the person with comfortable headroom; the source upload is unchanged. All three Smart G-ID researchers now have portraits. Current totals are 44 matched assets, comprising 42 researchers and two co-heads, with ten researchers retaining empty boxes.
+
+
+## SEO and public indexing
+
+Search metadata now describes the lab, both co-heads, BSCA/MSCA researchers, and individual projects accurately. The existing portfolio remains Paul's personal destination; lab-head names and research roles remain on People and group pages. Dedicated lab-head profiles and their navigation links were removed at the owner's request. Co-head cards remain unchanged. No additional student profile pages are generated.
+
+`SearchData` provides linked Website, Organization, Person, WebPage/ProfilePage and breadcrumb identities. People has a researcher list on the unfiltered page; filtered URLs do not assert a full visible list. ProfilePage markup is restricted to individual profile content. No degrees, academic appointments, official lab recognition, publications or external identities are fabricated. Project descriptions mention their existing researcher names.
+
+Canonical URLs, titles/descriptions, social metadata and indexing settings agree between initial HTML and client navigation. Existing public pages retain the personal site's sharing image. Unknown pages use noindex and omit structured data. Builds generate the 26-page sitemap from the same routes that are pre-rendered, avoiding forgotten profile URLs. `robots.txt` points to the public sitemap. Run `qa/check-seo.mjs` with the existing browser/axe environment to verify SEO content and profile journeys.
+
+After publication, verify a URL-prefix property for `https://paulrodolfcastor.vercel.app/` in Google Search Console. Use Google's supplied ownership-verification method; no verification token is included in this repository. Submit `sitemap.xml`, inspect the homepage, lab homepage, People and Research, and request indexing where appropriate. Test live structured markup using Google's Rich Results Test. Check indexing and search-performance reports before claiming improved visibility. Local tests do not establish live deployment, Google indexing, ranking or rich-result eligibility.
+
+Official references: https://developers.google.com/search/docs/appearance/structured-data/profile-page and https://developers.google.com/search/docs/crawling-indexing/ask-google-to-recrawl .
+
+
+## Dedicated profile removal
+
+The two added lab-head profile routes, page/data files, metadata entries, navigation links and sitemap URLs have been removed. Structured Person identities reference the existing portfolio and People page instead. The lab remains part of the personal portfolio. Existing search titles/descriptions, breadcrumbs, initial HTML, researcher names, canonical URLs and generated 26-page sitemap remain.

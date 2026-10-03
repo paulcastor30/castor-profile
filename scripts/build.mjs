@@ -25,6 +25,11 @@ const escape = value => value.replaceAll('&', '&amp;').replaceAll('"', '&quot;')
 async function save(path, destination) {
   const { html, metadata } = renderPage(path);
   let page = shell.replace('<div id="root"></div>', `<div id="root">${html}</div>`);
+  page = page.replace(/(<meta name="robots" content=")[^"]*/, `$1${metadata.robots}`);
+  page = page.replace(/(<meta property="og:type" content=")[^"]*/, `$1${metadata.type}`);
+  for (const [attribute, key, value] of [["property", "og:image", metadata.image], ["property", "og:image:alt", metadata.imageAlt], ["property", "og:image:width", metadata.imageWidth], ["property", "og:image:height", metadata.imageHeight], ["name", "twitter:image", metadata.image]]) {
+    page = page.replace(new RegExp(`(<meta ${attribute}="${key}" content=")[^"]*`), `$1${escape(value)}`);
+  }
   page = page.replace(/<title>.*?<\/title>/, `<title>${escape(metadata.title)}</title>`);
   page = page.replace(/(<meta name="description" content=")[^"]*/, `$1${escape(metadata.description)}`);
   page = page.replace(/(<link rel="canonical" href=")[^"]*/, `$1${escape(metadata.canonical)}`);
@@ -40,3 +45,8 @@ for (const path of paths) await save(path, path === '/' ? 'dist/index.html' : `d
 await save('/404', 'dist/404.html');
 await rm('.prerender', { recursive: true, force: true });
 console.log(`Pre-rendered ${paths.length} public pages plus the not-found page.`);
+
+const sitemap = `<?xml version="1.0" encoding="UTF-8"?>\n<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">\n${paths.map(path => `<url><loc>${escape(labPageMetadataUrl(path))}</loc></url>`).join("\n")}\n</urlset>\n`;
+function labPageMetadataUrl(path) { return renderPage(path).metadata.canonical; }
+await writeFile("public/sitemap.xml", sitemap);
+await writeFile("dist/sitemap.xml", sitemap);

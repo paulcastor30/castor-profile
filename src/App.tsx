@@ -1,4 +1,5 @@
 import { BrowserRouter, Route, Routes } from "react-router-dom";
+import SearchData from "./components/SearchData";
 import Index from "./pages/Index";
 import NotFound from "./pages/NotFound";
 import LabLayout from "./components/LabLayout";
@@ -10,7 +11,7 @@ import LabContact from "./pages/LabContact";
 import RouteFocus from "./components/RouteFocus";
 
 export function AppRoutes() {
-  return <><RouteFocus /><Routes>
+  return <><RouteFocus /><SearchData /><Routes>
     <Route path="/" element={<Index />} />
     <Route path="/lab" element={<LabLayout />}>
       <Route index element={<LabHome />} />
