@@ -1,4 +1,3 @@
-import Portrait from "./Portrait";
 import { Link } from "react-router-dom";
 import Education from "./Education";
 import Experience from "./Experience";
@@ -11,7 +10,6 @@ export default function About() {
       <div className="portfolio-container about-layout">
         <div className="about-heading"><p className="eyebrow">Who I am</p><h2 id="about-title">About me</h2></div>
         <div className="about-introduction">
-          <Portrait name={profile.name} className="personal-portrait" optional />
           <div className="about-copy">
             <p>I’m an engineer, researcher, and educator based in the Philippines. I work with small computers, sensors, and connected devices—from air quality monitoring to automated irrigation.</p>
             <p>I’m an Assistant Professor III at Mindanao State University – Iligan Institute of Technology (MSU-IIT). My work brings together practical engineering, research, and teaching.</p>

@@ -1,4 +1,5 @@
 import { ArrowDown, ArrowUpRight } from "lucide-react";
+import Portrait from "./Portrait";
 import { profile } from "@/lib/profile";
 
 export default function Hero() {
@@ -8,18 +9,14 @@ export default function Hero() {
         <p className="eyebrow">Engineer · Researcher · Educator</p>
         <h1 id="intro-title">Hi, I’m Paul<span aria-hidden="true">.</span></h1>
         <p className="full-name">Paul Rodolf P. Castor</p>
-        <p className="hero-description">I build devices that sense the world, connect with each other, and help people make better decisions.</p>
+        <Portrait name={profile.name} className="personal-portrait" optional />
+        <p className="hero-description">I build connected sensors and practical tools for environmental monitoring, agriculture, and assistive technology.</p>
         <p className="hero-affiliation">Assistant Professor at Mindanao State University – Iligan Institute of Technology (MSU-IIT), Philippines.</p>
         <div className="actions">
           <a className="primary-action" href={`mailto:${profile.email}`}>Email me <ArrowUpRight size={18} aria-hidden="true" /></a>
           <a className="text-action" href="#projects">Explore my work <ArrowDown size={17} aria-hidden="true" /></a>
         </div>
-      </div>
-      <div className="hero-aside">
-        <p className="eyebrow">Where my work comes together</p>
-        <div><span className="aside-number" aria-hidden="true">01</span><p><strong>Engineering</strong><span>Turning ideas into working devices.</span></p></div>
-        <div><span className="aside-number" aria-hidden="true">02</span><p><strong>Research</strong><span>Exploring how technology can help.</span></p></div>
-        <div><span className="aside-number" aria-hidden="true">03</span><p><strong>Teaching</strong><span>Helping others learn by building.</span></p></div>
+        <p className="contact-help hero-contact-help">“Email me” opens your email app. <a className="text-link" href="#contact">View or copy my email address</a></p>
       </div>
     </section>
   );

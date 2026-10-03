@@ -257,3 +257,7 @@ Production build, TypeScript, changed-file lint, portrait identity/loading/fallb
 ## About section composition — 3 October 2026
 
 The About heading spans the section. A narrow portrait column now aligns with the biography, and research links, laboratory introduction, and academic background follow below. Mobile stacks these in reading order with a compact 120px portrait. Co-head cards and the scrollable People directory remain unchanged. Production generation and automated portfolio accessibility checks passed before publication.
+
+## Opening-view refinement — 3 October 2026
+
+Moved the personal portrait into the first introduction and removed its duplicate from About. Desktop places it beside the greeting; mobile places it after the full name. Removed the repeated Engineering/Research/Teaching column, reduced opening spacing, strengthened full-name emphasis, clarified research areas, and added email-app guidance with a link to the existing copyable address. Lab pages and co-head cards are unchanged. The portrait was fully inside the initial viewport at 1800×960, 1440×900, 1280×720, and 390×900. Build, TypeScript, changed-component lint, keyboard, enlarged-text/reflow, forced colors, email-copy/fallback and navigation checks passed.
