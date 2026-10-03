@@ -17,7 +17,7 @@ try{
  photos.push(...await p.locator('img').evaluateAll(es=>es.map(e=>({src:e.getAttribute('src'),alt:e.alt,hidden:!!e.closest('[aria-hidden="true"]'),width:e.width,height:e.height}))));
  lluisma ||= await p.getByRole('heading',{name:'Ral Angelo S. Lluisma',exact:true}).isVisible();
  }
- assert.equal(members,52);assert.equal(placements,41);assert.equal(missing,11);assert(lluisma);
+ assert.equal(members,52);assert.equal(placements,42);assert.equal(missing,10);assert(lluisma);
  assert(photos.every(i=>i.alt===''&&i.hidden&&i.width>0&&i.height>0));
  for(const src of new Set(photos.map(photo=>photo.src))){const r=await p.request.get(base+src);assert.equal(r.status(),200);assert.match(r.headers()['content-type'],/image\/webp/);assert((await r.body()).length<100000);}
  for(const route of ['/lab','/lab/contact']){await p.goto(base+route);await p.waitForLoadState('networkidle');assert.equal(await p.locator('.head-portrait img').count(),2);}
@@ -28,8 +28,8 @@ try{
  assert.equal(await failed.locator('.researcher-card .portrait-placeholder:not(:has(img))').count(),1);await failed.close();
  assert.deepEqual(errors,[]);
  const files=await readdir('dist/images');assert(!files.includes('researchers')&&!files.includes('lab head'));
- assert.equal((await readdir('dist/images/portraits')).length,43);
- reports.push({check:'41 unique directory researcher photos, 2 lab heads, 11 empty researcher boxes, image decoding, small WebP assets, hidden redundant image descriptions, broken-image fallback, original uploads excluded from deployment',status:'passed'});
+ assert.equal((await readdir('dist/images/portraits')).length,44);
+ reports.push({check:'42 unique directory researcher photos, 2 lab heads, 10 empty researcher boxes, image decoding, small WebP assets, hidden redundant image descriptions, broken-image fallback, original uploads excluded from deployment',status:'passed'});
  const axe=await readFile(process.env.AXE_SOURCE_PATH,'utf8');
  for(const s of [{name:'phone',width:390,height:900},{name:'desktop',width:1440,height:900},{name:'large-text',width:1280,height:900,large:true},{name:'reflow',width:320,height:256},{name:'forced-colors',width:390,height:900,colors:'active'}]){
   const page=await b.newPage({viewport:{width:s.width,height:s.height},forcedColors:s.colors||'none'});

@@ -161,3 +161,8 @@ At the owner's request, portrait presentation now fills each existing frame usin
 ## Princess Castillo portrait
 
 Princess April E. Castillo's uploaded photo is matched to her existing Smart G-ID and People records. The optimized WebP is 525×700 and approximately 86 KB; the original remains unchanged and excluded from deployment output. Optional portrait framing metadata allows this casual photo's on-page crop to emphasize her face without altering the image file. Existing portraits retain their prior framing. There are now 43 matched assets: 41 researchers and two co-heads. Eleven researchers retain empty frames.
+
+
+## John Bernal portrait
+
+John Benedict D. Bernal's uploaded photo is matched to his existing People and Smart G-ID records. A 525×700 WebP copy is approximately 61 KB. Display framing emphasizes the person with comfortable headroom; the source upload is unchanged. All three Smart G-ID researchers now have portraits. Current totals are 44 matched assets, comprising 42 researchers and two co-heads, with ten researchers retaining empty boxes.

@@ -224,3 +224,10 @@ All 42 matched portrait assets were visually checked together under the new 4:5 
 The newly uploaded Castillo_Photo.jpg was matched by the supplied folder and existing full name to Princess April E. Castillo. Her People entry and Smart G-ID group now display the same optimized photo. A display-only framing adjustment reduces excess building/background in the frame while preserving her face. No academic membership, status, supervision or research output was changed. Source upload and all existing photos remain unchanged; missing-photo frames remain empty.
 
 Production generation, TypeScript and changed-file lint passed. Portrait checks verified 41 unique researcher images, eleven missing frames, 43 web assets, decoding, small file sizes and failure fallback. Twenty-five portrait layout/accessibility scenarios and twenty-five group scenarios passed phone, desktop, 200% text, narrow reflow and forced colors with zero automated WCAG A/AA violations and no horizontal overflow. The Smart G-ID researcher framing was visually inspected. Changes remain local; actual disability-user sessions and deployment are outstanding.
+
+
+## John Bernal photo update
+
+Bernal_Photo.jpg was matched by the supplied folder and existing full name to John Benedict D. Bernal. People and Smart G-ID share the optimized web copy. A display-only zoom and top-anchored crop provides clearer recognition and adequate headroom; neither source pixels nor academic records were changed. All three Smart G-ID members have photos, and ten other researcher frames remain empty.
+
+Production generation passed. Portrait loading, 42 unique directory researcher images, ten missing frames, 44 web assets, small file size and broken-image fallback passed. Twenty-five portrait layouts and twenty-five group layouts passed phone, desktop, 200% text, narrow reflow and forced colors with zero automated WCAG A/AA violations and no horizontal overflow. After a small final headroom adjustment, production generation passed again and the final group composition was visually inspected. Changes remain local; actual disability-user sessions are outstanding.

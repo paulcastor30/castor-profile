@@ -3,7 +3,7 @@ import assert from 'node:assert/strict';
 import {readFile,writeFile,mkdir} from 'node:fs/promises';
 const browser=await chromium.launch({executablePath:process.env.BROWSER_EXECUTABLE});
 const base=process.env.PORTFOLIO_URL||'http://127.0.0.1:8081';const axe=await readFile(process.env.AXE_SOURCE_PATH,'utf8');const results=[];
-const groups=[['rice-tungro',1,1,['Harreez Villaruz-Quimque','Paul Rodolf P. Castor','Apple Rose B. Alce']],['bell-pepper-aphid-damage',3,3,['Paul Rodolf P. Castor','Apple Rose B. Alce','Dr. Slamet Riyadi']],['smart-goat-profiling',3,2,['Dr. Ernesto E. Empig, DSDS','Paul Rodolf P. Castor']],['geosentry-landslide-warning',3,0,['Paul Rodolf P. Castor','Dr. Ganapathy Pattukandan Ganapathy','Dr. Slamet Riyadi']],['carbon-dioxide-adsorption',3,0,['Paul Rodolf P. Castor','Ralf Ruffel M. Abarca']]];
+const groups=[['rice-tungro',1,1,['Harreez Villaruz-Quimque','Paul Rodolf P. Castor','Apple Rose B. Alce']],['bell-pepper-aphid-damage',3,3,['Paul Rodolf P. Castor','Apple Rose B. Alce','Dr. Slamet Riyadi']],['smart-goat-profiling',3,3,['Dr. Ernesto E. Empig, DSDS','Paul Rodolf P. Castor']],['geosentry-landslide-warning',3,0,['Paul Rodolf P. Castor','Dr. Ganapathy Pattukandan Ganapathy','Dr. Slamet Riyadi']],['carbon-dioxide-adsorption',3,0,['Paul Rodolf P. Castor','Ralf Ruffel M. Abarca']]];
 await mkdir('qa/screenshots/new-groups',{recursive:true});
 try{
  for(const scenario of [{name:'phone',width:390,height:900},{name:'desktop',width:1440,height:900},{name:'large-text',width:1280,height:900,large:true},{name:'reflow',width:320,height:256},{name:'forced-colors',width:390,height:900,colors:'active'}]){
