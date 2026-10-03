@@ -22,3 +22,9 @@ dist-ssr
 *.njsproj
 *.sln
 *.sw?
+
+# Local portfolio browser verification artifacts
+qa/screenshots/
+qa/results.json
+
+qa/accessibility-results.json

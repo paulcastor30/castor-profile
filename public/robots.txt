@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://paulrodolfcastor.com/sitemap.xml
+Sitemap: https://paulrodolfcastor.vercel.app/sitemap.xml

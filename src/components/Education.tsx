@@ -7,7 +7,6 @@ const degrees = [
     school: "Mindanao State University – Iligan Institute of Technology",
     date: "March 2023",
     details: [
-      "CGPA: 1.392857 / 1.00",
       "Thesis: Design and Development of an Outdoor Air Quality Monitoring System",
       "ERDT Scholar",
     ],

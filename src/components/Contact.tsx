@@ -1,61 +1,45 @@
-import SectionWrapper from "./SectionWrapper";
-import SectionHeading from "./SectionHeading";
-import { Mail, MapPin, Phone, FileText } from "lucide-react";
-
-const links = [
-  { label: "LinkedIn", href: "https://linkedin.com/" },
-  { label: "GitHub", href: "https://github.com/" },
-  { label: "Google Scholar", href: "https://scholar.google.com/" },
-  { label: "ORCID", href: "https://orcid.org/" },
-];
+import { useRef, useState } from "react";
+import { ArrowUpRight, Copy } from "lucide-react";
+import { profile } from "@/lib/profile";
 
 export default function Contact() {
+  const emailField = useRef<HTMLInputElement>(null);
+  const [copyMessage, setCopyMessage] = useState({ text: "", attempt: 0 });
+
+  async function copyEmail() {
+    let text: string;
+    try {
+      await navigator.clipboard.writeText(profile.email);
+      text = "Email address copied. Paste it into your email app.";
+    } catch {
+      emailField.current?.focus();
+      emailField.current?.select();
+      text = "Your browser could not copy the address. It is selected in the email field. Use your device’s Copy command, or press Control+C on Windows or Command+C on Mac.";
+    }
+    setCopyMessage(previous => ({ text, attempt: previous.attempt + 1 }));
+  }
+
   return (
-    <SectionWrapper id="contact" alt>
-      <SectionHeading title="Contact & Collaboration" />
-      <div className="max-w-2xl">
-        <p className="text-text-secondary leading-relaxed mb-8">
-          Open to academic collaborations, engineering projects, embedded systems development, AIoT initiatives, research partnerships, and technical consulting opportunities.
-        </p>
-
-        <div className="space-y-3 mb-8">
-          <div className="flex items-center gap-3 text-sm text-text-secondary">
-            <Mail size={16} className="text-teal" />
-            <a href="mailto:paulrodolf.castor@g.msuiit.edu.ph" className="hover:text-foreground transition-colors">paulrodolf.castor@g.msuiit.edu.ph</a>
-          </div>
-          <div className="flex items-center gap-3 text-sm text-text-secondary">
-            <Phone size={16} className="text-teal" />
-            <span>Available upon request</span>
-          </div>
-          <div className="flex items-center gap-3 text-sm text-text-secondary">
-            <MapPin size={16} className="text-teal" />
-            <span>Tukuran, Zamboanga del Sur, Philippines</span>
-          </div>
+    <section id="contact" tabIndex={-1} className="portfolio-section contact-section" aria-labelledby="contact-title">
+      <div className="portfolio-container contact-layout">
+        <div>
+          <p className="eyebrow">Say hello</p>
+          <h2 id="contact-title">Contact me</h2>
+          <p className="contact-intro">Have a project in mind, a research idea, or a question? I’d be happy to hear from you. You don’t need to know the technical terms to get in touch.</p>
         </div>
-
-        <div className="flex flex-wrap gap-3 mb-8">
-          {links.map((l) => (
-            <a
-              key={l.label}
-              href={l.href}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="inline-flex items-center gap-2 px-5 py-2.5 rounded-lg border border-border bg-card text-foreground text-sm font-medium hover:border-teal/30 hover:shadow-sm transition-all"
-            >
-              {l.label} ↗
-            </a>
-          ))}
+        <div className="contact-options">
+          <label className="email-label" htmlFor="contact-email">My email address</label>
+          <input ref={emailField} id="contact-email" className="email-field" type="text" value={profile.email} readOnly spellCheck={false} aria-describedby="email-help" onFocus={event => event.currentTarget.select()} />
+          <div className="actions">
+            <a className="primary-action" href={`mailto:${profile.email}`} aria-describedby="email-help">Email me <ArrowUpRight size={18} aria-hidden="true" /></a>
+            <button className="text-action" type="button" onClick={copyEmail} aria-describedby="email-help"><Copy size={16} aria-hidden="true" /> Copy email address</button>
+          </div>
+          <p id="email-help" className="contact-help">“Email me” opens your email app. If you use email in a web browser, copy my address and paste it into a new message.</p>
+          <p className="copy-message" role="status" aria-live="polite" aria-atomic="true"><span key={copyMessage.attempt}>{copyMessage.text}</span></p>
+          <a className="text-link" href={profile.github}>My code and projects on GitHub <ArrowUpRight size={16} aria-hidden="true" /></a>
+          <p className="contact-help">If something on this website is difficult to read or use, you can email me about it.</p>
         </div>
-
-        <a
-          href="/Paul_Rodolf_Castor_Resume.pdf"
-          target="_blank"
-          rel="noopener noreferrer"
-          className="inline-flex items-center gap-2 px-6 py-3 rounded-lg bg-teal text-accent-foreground font-medium text-sm hover:bg-teal-light transition-colors"
-        >
-          <FileText size={16} /> Download Resume (PDF)
-        </a>
       </div>
-    </SectionWrapper>
+    </section>
   );
 }
