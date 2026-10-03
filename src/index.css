@@ -174,7 +174,9 @@ a:focus-visible, button:focus-visible, summary:focus-visible { outline: 3px soli
 .hero-aside p span { display: block; font-size: 0.875rem; color: #58635d; margin-top: 4px; }
 .portfolio-section { padding-block: 84px; border-top: 1px solid #e4e6df; }
 .portfolio-section h2 { font-weight: 400; font-size: clamp(2rem, 4vw, 2.6875rem); line-height: 1.22; letter-spacing: -.035em; }
-.about-layout { display: grid; grid-template-columns: 1fr 1.25fr; gap: 80px; }
+.about-layout { display: grid; gap: 32px; max-width: 960px; }
+.about-introduction { display: grid; grid-template-columns: 160px minmax(0, 1fr); gap: 36px; align-items: start; }
+.about-support { min-width: 0; }
 .about-copy > p { color: #58635d; margin-bottom: 20px; font-size: 1.0625rem; }
 .section-introduction { display: flex; justify-content: space-between; align-items: end; gap: 48px; margin-bottom: 38px; }
 .section-introduction > p { max-width: 385px; color: #58635d; }
@@ -217,7 +219,7 @@ a:focus-visible, button:focus-visible, summary:focus-visible { outline: 3px soli
 @media (max-width: 800px) {
   .hero { gap: 40px; grid-template-columns: 1fr; padding-block: 64px; }
   .hero-aside { display: none; }
-  .about-layout { grid-template-columns: 1fr; gap: 30px; }
+  .about-layout { gap: 24px; }
   .portfolio-section { padding-block: 56px; }
   .featured-work { grid-template-columns: 1fr; gap: 16px; }
   .work-card { padding: 24px; }
@@ -361,7 +363,8 @@ html { scroll-behavior: auto; }
 .head-portrait { width: 96px; aspect-ratio: 1; float: right; margin: 0 0 1rem 1rem; }
 @media (max-width: 540px) { .head-portrait { float: none; width: 120px; margin: 0 0 1rem; } }
 
-.personal-portrait { width: 160px; margin-top: 1.5rem; }
+.personal-portrait { width: 160px; margin: 0; }
+@media (max-width: 600px) { .about-introduction { grid-template-columns: 1fr; gap: 24px; } .personal-portrait { width: 120px; } }
 .co-adviser-list { display: grid; gap: .5rem; }
 
 /* Keep the people directory compact while retaining names and optional portraits. */

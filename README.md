@@ -188,3 +188,7 @@ The two added lab-head profile routes, page/data files, metadata entries, naviga
 ## Latest portrait update — 3 October 2026
 
 Added Renato G. Beroy, Sherie Grace L. Lupoz, and Arianne G. Mecarsos to their existing GeoSentry records. The People directory remains fully scrollable, with 45 researcher portraits and seven clean empty frames. There are 47 web portrait assets including the two lab heads. These totals supersede earlier dated review entries. Renato has individual CSS framing; all three original uploads remain unchanged.
+
+## About section composition — 3 October 2026
+
+The About heading spans the section. A narrow portrait column now aligns with the biography, and research links, laboratory introduction, and academic background follow below. Mobile stacks these in reading order with a compact 120px portrait. Co-head cards and the scrollable People directory remain unchanged. Production generation and automated portfolio accessibility checks passed before publication.
