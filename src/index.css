@@ -339,3 +339,18 @@ html { scroll-behavior: auto; }
   .lab-head, .lab-contact-card { padding: 1.25rem; }
 }
 @media (forced-colors: active) { .portrait-placeholder, .research-filters, .lab-head, .lab-contact-card { border-color: CanvasText; } }
+
+/* Updated CV details remain readable inside native expandable sections. */
+.publication-list h4 { font-size: 1.25rem; line-height: 1.5; font-weight: 400; }
+.publication-list h4 a { display: block; min-height: 44px; color: #216b56; text-decoration: underline; text-underline-offset: .2em; }
+.publication-list section > h3 { margin-top: 1.5rem; font-size: 1.5rem; }
+.publication-list .paper-status { color: #253e32; }
+.conference-papers { margin-block: 1.5rem; }
+.internship-record { padding: 1.5rem 0; border-block: 1px solid #dce2d9; margin-block: 1.5rem 2rem; }
+.internship-record h3 { font-size: 1.25rem; margin-bottom: .75rem; }
+.internship-record p, .academic-roles p { font-size: 1rem; color: #58635d; margin-top: .5rem; }
+.academic-roles { display: grid; gap: 1.5rem; margin-bottom: 2rem; }
+.academic-roles h3, .academic-review-lists h3 { font-size: 1.25rem; margin-bottom: .75rem; }
+.academic-review-lists { display: grid; gap: 1.5rem; }
+.academic-review-lists ul { list-style: disc; padding-left: 1.25rem; }
+.academic-review-lists li { margin-block: .75rem; font-size: 1rem; color: #58635d; }

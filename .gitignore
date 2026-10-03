@@ -35,3 +35,5 @@ qa/lab-results.json
 qa/lab-accessibility-results.json
 
 qa/lab-keyboard-results.json
+
+qa/cv-results.json

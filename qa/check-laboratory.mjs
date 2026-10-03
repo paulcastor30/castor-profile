@@ -34,8 +34,8 @@ try {
   await page.getByRole('heading',{name:'Official thesis title'}).waitFor();
   researchers+=await page.locator('.researcher-card').count();
   outputs+=await page.locator('.output-status').count();
-  for(const text of await page.locator('.output-status').allTextContents()) assert.equal(text,'Accepted · 2026');
-  assert.equal(await page.locator('.research-outputs a').count(),0);
+  for(const text of await page.locator('.output-status').allTextContents()) assert(['Accepted · 2026', 'Published · 2026', 'Conference paper · 2026'].includes(text));
+  if(link.endsWith('cacao-disease')) assert.equal(await page.locator('.research-outputs a').getAttribute('href'),'https://doi.org/10.1016/j.procs.2026.07.102'); else assert.equal(await page.locator('.research-outputs a').count(),0);
   assert.equal(await page.locator('.portrait-placeholder:not([aria-hidden="true"])').count(),0);
   const response = await page.request.get(base+link);
   assert.equal(response.status(),200);
@@ -43,7 +43,7 @@ try {
   assert(html.includes('Official thesis title'),'Missing initial HTML content');
   assert(html.includes(`href="https://paulrodolfcastor.vercel.app${link}"`),'Wrong canonical');
  }
- assert.equal(researchers,40); assert.equal(outputs,2);
+ assert.equal(researchers,40); assert.equal(outputs,5);
  await visit(`${base}/lab/people`);
  assert.equal(await page.locator('.researcher-card').count(),40);
  assert.equal(await page.locator('.portrait-placeholder img').count(),0);
@@ -74,7 +74,7 @@ try {
  await page.getByRole('link',{name:'Paul Castor’s personal portfolio',exact:true}).click();
  await page.getByRole('heading',{name:'Hi, I’m Paul'}).waitFor();
  assert.deepEqual(errors,[]);
- reports.push({journeys:'16 group URLs; 40 researchers; 2 accepted outputs; filters, shared URLs, contact copying and fallback, skip links, route focus, portfolio return',status:'passed'});
+ reports.push({journeys:'16 group URLs; 40 researchers; 5 outputs with separate published, accepted, and conference-paper labels; filters, shared URLs, contact copying and fallback, skip links, route focus, portfolio return',status:'passed'});
  await context.close();
  const routes=['/lab','/lab/research','/lab/people',links.find(l=>l.includes('goat')), '/lab/contact'];
  for(const scenario of [{name:'phone',width:390,height:900},{name:'desktop',width:1440,height:900},{name:'large-text',width:1280,height:900,textScale:2},{name:'reflow',width:320,height:256},{name:'forced-colors',width:390,height:900,forcedColors:'active'}]) {

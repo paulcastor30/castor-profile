@@ -12,7 +12,7 @@ export default function About() {
         <div className="about-copy">
           <p>I’m an engineer, researcher, and educator based in the Philippines. I work with small computers, sensors, and connected devices—from air quality monitoring to automated irrigation.</p>
           <p>I’m an Assistant Professor III at Mindanao State University – Iligan Institute of Technology (MSU-IIT). My work brings together practical engineering, research, and teaching.</p>
-          <p>I’m interested in making devices more useful with artificial intelligence, and helping students turn their ideas into working projects.</p>
+          <p>My recent research explores disease detection in crops, connected sensors, and devices that recognize sign-language letters. I help students turn their ideas into working projects.</p>
           <div className="research-profiles" role="group" aria-label="Research profiles">
             <a className="text-link" href={profile.orcid}>My research profile on ORCID</a>
             <a className="text-link" href={profile.scopus}>My publications on Scopus</a>

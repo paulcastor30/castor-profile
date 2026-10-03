@@ -31,7 +31,7 @@ try {
       await page.screenshot({ path: `qa/screenshots/${scenario.name}${expanded ? '-expanded' : ''}.png`, fullPage: true });
     }
     // Every visible standalone control has a forgiving 44-by-44 CSS pixel target.
-    const targets = await page.locator('.navigation a, .primary-action, .text-action, .text-link, summary, input, .site-footer a').evaluateAll(elements => elements.filter(el => el.getClientRects().length).map(el => ({ name: el.textContent || el.getAttribute('aria-label') || el.id, width: el.getBoundingClientRect().width, height: el.getBoundingClientRect().height })));
+    const targets = await page.locator('.navigation a, .primary-action, .text-action, .text-link, summary, input, .site-footer a, .publication-list h4 a').evaluateAll(elements => elements.filter(el => el.getClientRects().length).map(el => ({ name: el.textContent || el.getAttribute('aria-label') || el.id, width: el.getBoundingClientRect().width, height: el.getBoundingClientRect().height })));
     assert(targets.every(target => target.width >= 44 && target.height >= 44), `${scenario.name}: undersized control ${JSON.stringify(targets.filter(target => target.width < 44 || target.height < 44))}`);
     if (scenario.name === 'desktop') {
       // Walk the complete expanded page using Tab, checking focus and header overlap.

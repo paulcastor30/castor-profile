@@ -28,10 +28,16 @@ export default function Experience() {
         ))}
       </div>
 
+      <article className="internship-record">
+        <h3>Research internship</h3>
+        <p>International Center for AI and Cyber Security Research and Innovations Lab</p>
+        <p>Asia University · Taichung City, Taiwan</p>
+        <p>July – December 2026</p>
+      </article>
       <div className="max-w-2xl">
         <h3 className="text-xl font-semibold text-foreground mb-3">Teaching & Technical Instruction</h3>
         <p className="text-text-secondary text-sm mb-4 leading-relaxed">
-          Extensive instruction across core electrical, electronics, and computing disciplines—preparing students and engineers for embedded systems design, firmware development, and real-time system implementation.
+          I teach electronics, computing, and the design of small computer-based systems. Students learn to connect hardware and software through practical projects.
         </p>
         <div className="flex flex-wrap gap-2">
           {teachingAreas.map((a) => (

@@ -1,4 +1,5 @@
 import Publications from "./Publications";
+import { Link } from "react-router-dom";
 import { profile } from "@/lib/profile";
 
 const projects = [
@@ -9,6 +10,22 @@ const projects = [
     role: "Lead developer",
     tags: ["IoT", "Monitoring", "Edge"],
     details: "Designed and deployed sensor nodes across campus with LoRa-based communication, server-side data aggregation, and a web dashboard for real-time air quality visualization.",
+  },
+  {
+    title: "Goat location monitoring",
+    desc: "A connected collar project designed to monitor goats within a defined area, using long-range wireless communication.",
+    stack: ["ESP32", "LoRaWAN", "C/C++"],
+    role: "Thesis adviser",
+    tags: ["IoT", "Monitoring"],
+    group: "goat-geofencing",
+  },
+  {
+    title: "Wearable sign-language letter recognition",
+    desc: "A wearable prototype that recognizes American Sign Language letters. Its pilot study examines feasibility, ease of use, and acceptance.",
+    stack: ["Raspberry Pi", "Python", "Machine Learning"],
+    role: "Thesis adviser",
+    tags: ["Edge", "Assistive"],
+    group: "sign-language-headset",
   },
   {
     title: "Automated irrigation for rice fields",
@@ -67,6 +84,7 @@ export default function Projects() {
               <h3>{project.title}</h3>
               <p className="work-description">{project.desc}</p>
               <p className="work-role">My role: {project.role.toLowerCase()}</p>
+              {project.group && <Link className="text-link" to={`/lab/research/${project.group}`}>Meet the {project.group === "goat-geofencing" ? "goat monitoring" : "sign-language"} research team</Link>}
               <a className="text-link" href={`mailto:${profile.email}?subject=${encodeURIComponent(`Question about ${project.title}`)}`} aria-label={`Email me about this project: ${project.title}`}>Email me about this project <span aria-hidden="true">↗</span></a>
             </article>
           ))}

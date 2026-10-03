@@ -3,7 +3,7 @@ export type ResearchOutput = {
   authors: string;
   venue: string;
   year: number;
-  status: "Published" | "Accepted" | "Presented";
+  status: "Published" | "Accepted" | "Presented" | "Conference paper";
   url?: string;
 };
 
@@ -81,7 +81,15 @@ export const thesisGroups: ThesisGroup[] = [
       "Mark Joceph A. Apao"
     ],
     "graduationYear": 2026,
-    "outputs": []
+    "outputs": [
+      {
+        "title": "Designing and Developing a Hyperlocal Air Quality Monitoring System for Philippine Urban Environments",
+        "authors": "Apao, M. J. A., Castor, P. R. P., & Galido, A. P.",
+        "venue": "6th International Conference on Novel & Intelligent Digital Systems (NiDS 2026), Athens, Greece, September 24–26, 2026.",
+        "year": 2026,
+        "status": "Conference paper"
+      }
+    ]
   },
   {
     "slug": "cacao-disease",
@@ -95,7 +103,16 @@ export const thesisGroups: ThesisGroup[] = [
       "Neil Christian P. Balayon"
     ],
     "graduationYear": 2026,
-    "outputs": []
+    "outputs": [
+      {
+        "title": "AI-based disease detection for cacao black pod rot (p. palmivora): a scoping review",
+        "authors": "Balayon, N. C. P., Castor, P. R. P., & Galido, A. P.",
+        "venue": "Procedia Computer Science, 284, 1150–1157.",
+        "year": 2026,
+        "url": "https://doi.org/10.1016/j.procs.2026.07.102",
+        "status": "Published"
+      }
+    ]
   },
   {
     "slug": "smart-shelf",
@@ -178,8 +195,8 @@ export const thesisGroups: ThesisGroup[] = [
     "outputs": [
       {
         "title": "Geo-Goat: Evaluation of a LoRaWAN-Enabled Geofencing Collar for Smallholder Goat Monitoring",
-        "authors": "Escolano, M. J. J.; Tagorda, I. M. A.; Tenecio, Y. C. C.; Alce, A. R. B.; Castor, P. R. P.",
-        "venue": "2026 13th International Conference on Electrical Engineering, Computer Science and Informatics (EECSI), Yogyakarta, Indonesia, September 2–3, 2026",
+        "authors": "Escolano, M. J. J., Tagorda, I. M. A., Tenecio, Y. C. C., Alce, A. R. B., & Castor, P. R. P.",
+        "venue": "2026 13th International Conference on Electrical Engineering, Computer Science and Informatics (EECSI), Yogyakarta, Indonesia, September 2–3, 2026.",
         "year": 2026,
         "status": "Accepted"
       }
@@ -263,7 +280,15 @@ export const thesisGroups: ThesisGroup[] = [
       "Jevon Karl A. Tuba"
     ],
     "graduationYear": 2025,
-    "outputs": []
+    "outputs": [
+      {
+        "title": "Embedded IoT-Based Real-Time Room-Level Energy Monitoring, Load Control and Automated Billing System",
+        "authors": "Alce, A. R. B., Shanmugam, M., Torregoza, P. B. D., Zapatos, D. K. G., Tuba, J. K. A., Castor, P. R. P., & Zaman, H. B.",
+        "venue": "2026 IEEE International Conference on Computing (ICOCO), Langkawi, Kedah, Malaysia, October 12–14, 2026.",
+        "year": 2026,
+        "status": "Conference paper"
+      }
+    ]
   },
   {
     "slug": "sign-language-headset",
@@ -282,8 +307,8 @@ export const thesisGroups: ThesisGroup[] = [
     "outputs": [
       {
         "title": "Development and Evaluation of a Wearable Headband-Based ASL Letter Recognition Prototype: A Pilot Feasibility, Usability, and Acceptance Study",
-        "authors": "Narvasa, D. J. A.; Colao, J. O. T.; Jalbuna, G. R. C.; Castor, P. R. P.; Alce, A. R. B.",
-        "venue": "6th International Conference on Novel & Intelligent Digital Systems (NiDS 2026), Athens, Greece, September 24–26, 2026",
+        "authors": "Narvasa, D. J. A., Colao, J. O. T., Jalbuna, G. R. C., Castor, P. R. P., & Alce, A. R. B.",
+        "venue": "6th International Conference on Novel & Intelligent Digital Systems (NiDS 2026), Athens, Greece, September 24–26, 2026.",
         "year": 2026,
         "status": "Accepted"
       }

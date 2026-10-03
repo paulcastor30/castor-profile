@@ -34,7 +34,7 @@ node qa/check-portfolio.mjs
 - Identity, email, GitHub profile, and public address: `src/lib/profile.ts`.
 - Introduction and biography: `src/components/Hero.tsx` and `src/components/About.tsx`.
 - Selected projects and additional projects: `src/components/Projects.tsx`.
-- Research papers: `src/components/Publications.tsx`.
+- Research citations: `src/data/research.ts`; presentation: `src/components/Publications.tsx`.
 - Education, appointments, and service: their components, available through About’s expandable section.
 - Contact wording: `src/components/Contact.tsx`.
 - Search and sharing metadata: `index.html`.
@@ -79,3 +79,13 @@ Build generation lives in `scripts/build.mjs` and `src/prerender.tsx`. Route tit
 Run `node qa/check-laboratory.mjs` with `AXE_SOURCE_PATH` pointing to axe-core and optional `BROWSER_EXECUTABLE` / `PORTFOLIO_URL`. It checks the directory, filters, group pages, accepted outputs, contact copying and fallback, navigation, mobile layouts, larger text, reflow, and forced colors.
 
 `node qa/check-lab-keyboard.mjs` verifies every lab page control by keyboard and all 21 public pages with JavaScript disabled.
+
+## October 2026 CV update
+
+The portfolio displays six published papers and thirteen conference entries from the updated owner-supplied CV. Confirmed accepted outputs retain their acceptance label; other entries use “Conference paper” without inferring presentation or publication from conference dates. Five lab groups have directly matching outputs, including the cacao review's publisher link.
+
+Recent featured work highlights goat monitoring and wearable sign-language letter recognition, using the supplied thesis-adviser roles. Earlier engineering work stays available in the projects disclosure. The internship, Associate Editor appointment and term, program committee role, five journal-review records, and seven conference-review records are available through About's background disclosure. Conference details use a second native disclosure so the main journey stays short.
+
+The CV's private phone number and ambiguous GPA are omitted. The original document is not copied into the public website. The public contact section lists the CV's spoken languages: English, Filipino, and Cebuano.
+
+Run `node qa/check-cv-update.mjs` against a preview to verify the updated record and disclosures at four screen widths. Generated `qa/cv-results.json` and screenshots are ignored by Git.

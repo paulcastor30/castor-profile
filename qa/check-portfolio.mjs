@@ -52,7 +52,7 @@ try {
     for (const href of links.filter(link => link.startsWith('#'))) assert.equal(await page.locator(href).count(), 1, `Missing anchor ${href}`);
     const projectLinks = links.filter(link => link.includes('?subject='));
     assert.equal(projectLinks.length, 4);
-    const projectNames = await page.locator('.work-card a').evaluateAll(elements => elements.map(el => el.getAttribute('aria-label')));
+    const projectNames = await page.locator('.work-card a[href^="mailto:"]').evaluateAll(elements => elements.map(el => el.getAttribute('aria-label')));
     assert.equal(new Set(projectNames).size, 3);
     assert(projectNames.every(name => name.startsWith('Email me about this project: ')));
     assert(projectLinks.every(link => link.startsWith('mailto:paulrodolf.castor@g.msuiit.edu.ph?subject=')));
