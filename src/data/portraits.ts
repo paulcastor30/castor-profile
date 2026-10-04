@@ -1,6 +1,17 @@
 // Explicitly matched to the owner-supplied portrait folders.
 export type PortraitAsset = { src: string; width: number; height: number; framing?: { scale: number; origin: string } };
 export const portraits: Record<string, PortraitAsset> = {
+"John Vincent Ramirez": {"src":"/images/portraits/john-vincent-ramirez.webp","width":500,"height":700},
+"Jae Shai April Orilloza": {"src":"/images/portraits/jae-shai-april-orilloza.webp","width":560,"height":700},
+"Joshua Mangca": {"src":"/images/portraits/joshua-mangca.webp","width":560,"height":700},
+"Jullifer D. Llegado": {"src":"/images/portraits/jullifer-d-llegado.webp","width":560,"height":700},
+"Frances Nicole S. Gigataras": {"src":"/images/portraits/frances-nicole-s-gigataras.webp","width":560,"height":700},
+"Ethan C. Duhaylungsod": {"src":"/images/portraits/ethan-c-duhaylungsod.webp","width":560,"height":700},
+"Mathew Karl M. Asidillo": {"src":"/images/portraits/mathew-karl-m-asidillo.webp","width":560,"height":700},
+"Salman H. Ali": {"src":"/images/portraits/salman-h-ali.webp","width":560,"height":700},
+"Crishelle A. Agopitac": {"src":"/images/portraits/crishelle-a-agopitac.webp","width":560,"height":700},
+"Ashari M. Acmad": {"src":"/images/portraits/ashari-m-acmad.webp","width":560,"height":700},
+"Norol-Izza Y. Abdullah": {"src":"/images/portraits/norol-izza-y-abdullah.webp","width":560,"height":700},
   "Renato G. Beroy": { src: "/images/portraits/renato-g-beroy.webp", width: 467, height: 700, framing: { scale: 1.2, origin: "50% 20%" } },
   "Sherie Grace L. Lupoz": { src: "/images/portraits/sherie-grace-l-lupoz.webp", width: 560, height: 510 },
   "Arianne G. Mecarsos": { src: "/images/portraits/arianne-g-mecarsos.webp", width: 560, height: 560 },

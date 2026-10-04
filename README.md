@@ -210,3 +210,11 @@ Production build, TypeScript and changed-component lint passed. Search typing fo
 ## Usman and Amboang publications
 
 Added one published BirdNET review to Usman's avian-diversity group and two published pedestrian-safety papers to Amboang's SWiPS group. DOI links and the canonical PACIS proceedings page identify the publisher records. These three lab papers are kept separate from Castor's personal publications because he is not a listed author. The group output total is now 13.
+
+## AvianTech — 4 October 2026
+
+Added the supplied EUSPN 2026 AvianTech citation under Usman's avian-diversity group as a Conference paper, preserving author order, venue, location and dates. No acceptance, presentation, publication or DOI is inferred. Usman's group now has two outputs; the lab has 14. Castor's personal publication list is unchanged.
+
+Class of 2024 BSCA records include five thesis groups. Researchers with later MSCA work retain one directory entry with both program memberships; Class of 2024 filters show their undergraduate work. Uploaded portraits are optimized as WebP copies; source uploads remain unchanged.
+
+The lab now lists 26 thesis groups, 63 unique researchers and 68 program memberships. There are 56 researcher portraits plus two lab heads, with seven empty researcher frames. Production build, type checking, changed-file lint, all 31 search-visible pages, directory filtering, all group pages, contact journeys, image loading/fallbacks, and 75 automated accessibility/layout scenarios passed. Desktop and phone layouts were visually reviewed. These checks do not replace usability testing with disabled participants.

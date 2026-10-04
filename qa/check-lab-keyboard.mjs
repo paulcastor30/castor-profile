@@ -23,7 +23,7 @@ try{
  const staticPage=await browser.newPage({javaScriptEnabled:false});
  const sitemap=await readFile('public/sitemap.xml','utf8');
  const urls=[...sitemap.matchAll(/<loc>(.*?)<\/loc>/g)].map(m=>m[1]);
- assert.equal(urls.length,26);
+ assert.equal(urls.length,31);
  for(const url of urls){
   const route=new URL(url).pathname;
   const response=await staticPage.goto(base+route);

@@ -378,13 +378,94 @@ const groupRecords: ThesisGroup[] = [
     ],
     "graduationYear": null,
     "outputs": []
-  }
+  },
+{
+  "slug": "coin-operated-energy-meter",
+  "shortTitle": "Coin-operated electricity meter",
+  "title": "Developing a Coin-Operated Energy Power Consumption Meter: An Innovative Solution for Energy Poverty (ISEP)",
+  "summary": "A coin-operated meter designed to measure electricity consumption and support access to energy.",
+  "adviser": "Paul Rodolf P. Castor",
+  "coAdviser": "Apple Rose B. Alce",
+  "researchers": [
+    "Jyresa Mae M. Amboang",
+    "Frances Nicole S. Gigataras",
+    "Jullifer D. Llegado"
+  ],
+  "program": "BS",
+  "graduationYear": 2024,
+  "outputs": []
+},
+{
+  "slug": "outdoor-particulate-monitoring",
+  "shortTitle": "Outdoor particulate matter monitoring",
+  "title": "Development of Raspberry Pi-Based University Outdoor Airborne Particulate Matter (PM2.5) Acquisition System Using YOLOv5",
+  "summary": "A Raspberry Pi-based system designed to collect information about fine airborne particles outdoors at a university.",
+  "adviser": "Paul Rodolf P. Castor",
+  "coAdviser": "Dr. Adrian P. Galido",
+  "researchers": [
+    "Norol-Izza Y. Abdullah",
+    "Crishelle A. Agopitac",
+    "Alyssa M. Usman"
+  ],
+  "program": "BS",
+  "graduationYear": 2024,
+  "outputs": []
+},
+{
+  "slug": "aerosense-air-quality",
+  "shortTitle": "Aerosense: drone air quality monitoring",
+  "title": "Aerosense: Development and Evaluation of a Drone-Based Air Quality Harvesting System Utilizing LoRa Technology in Kiwalan, Iligan City, Philippines",
+  "summary": "A drone-based system designed to collect air quality data and transmit it using LoRa wireless technology.",
+  "adviser": "Paul Rodolf P. Castor",
+  "coAdviser": "Dr. Adrian P. Galido",
+  "researchers": [
+    "Salman H. Ali",
+    "Neil Christian P. Balayon",
+    "Ethan C. Duhaylungsod"
+  ],
+  "program": "BS",
+  "graduationYear": 2024,
+  "outputs": []
+},
+{
+  "slug": "floodsense-river-warning",
+  "shortTitle": "FloodSense: river monitoring and flood warning",
+  "title": "FloodSense: Development of Near Real-Time IoT-based Water Level Monitoring and Early Flood Warning System for Iligan City Tubod River, Philippines",
+  "summary": "Connected sensors designed to monitor water levels and provide early flood warnings for the Tubod River in Iligan City.",
+  "adviser": "Apple Rose B. Alce",
+  "coAdviser": "Paul Rodolf P. Castor",
+  "researchers": [
+    "Joshua Mangca",
+    "Jae Shai April Orilloza",
+    "John Vincent Ramirez"
+  ],
+  "program": "BS",
+  "graduationYear": 2024,
+  "outputs": []
+},
+{
+  "slug": "coffee-berry-borer",
+  "shortTitle": "Coffee berry borer detection",
+  "title": "Vision-Based Coffee Berry Borer Detection Using MobileNet Convolutional Neural Network",
+  "summary": "An image-based system using MobileNet to detect coffee berry borer pests.",
+  "adviser": "Maria Fe P. Bahinting",
+  "coAdviser": "Paul Rodolf P. Castor",
+  "researchers": [
+    "Ashari M. Acmad",
+    "Mark Joceph A. Apao",
+    "Mathew Karl M. Asidillo"
+  ],
+  "program": "BS",
+  "graduationYear": 2024,
+  "outputs": []
+}
 ];
 
 // Explicit project associations; citation content and status come from one shared record.
 const outputAssignments: Record<string, string[]> = {
   "avian-diversity": [
-    "BirdNET in avian diversity monitoring: capabilities and challenges"
+    "BirdNET in avian diversity monitoring: capabilities and challenges",
+    "AvianTech: An Edge-AI IoT Architecture for Real-Time Multimodal Visual-Acoustic Avian Biodiversity Monitoring"
   ],
   "pedestrian-warning": [
     "From problem analysis to design thinking: Developing the SWiPS system for urban pedestrian safety",
@@ -444,7 +525,17 @@ const labPublications: ResearchOutput[] = [
     url: "https://aisel.aisnet.org/pacis2025/iot_smartcity/iot_smartcity/7/"
   }
 ];
-const paperRecords = [...publications, ...conferencePapers, ...labPublications];
+// Owner-supplied conference record; acceptance, presentation and publication are not confirmed.
+const labConferencePapers: ResearchOutput[] = [
+  {
+    title: "AvianTech: An Edge-AI IoT Architecture for Real-Time Multimodal Visual-Acoustic Avian Biodiversity Monitoring",
+    authors: "Usman, A., Galido, A., Amboang, J. M., & Alce, A. R.",
+    venue: "17th International Conference on Emerging Ubiquitous Systems and Pervasive Networks (EUSPN 2026), Almaty, Kazakhstan, October 28–30, 2026.",
+    year: 2026,
+    status: "Conference paper"
+  }
+];
+const paperRecords = [...publications, ...conferencePapers, ...labPublications, ...labConferencePapers];
 function findOutput(title: string): ResearchOutput {
   const paper = paperRecords.find(item => item.title === title);
   if (!paper) throw new Error(`Missing research citation: ${title}`);
