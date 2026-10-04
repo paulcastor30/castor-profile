@@ -226,3 +226,9 @@ Vercel Web Analytics uses the React SDK at the shared router root in production 
 ## Researcher names — 4 October 2026
 
 Seventeen existing researcher display names now use the middle initials supplied in their photo-folder names. Names in folders without a middle initial stay unchanged. Directory memberships, thesis groups, portrait matching and derived search metadata share these names. Publication citation author names remain as published.
+
+## BSCA Classes of 2023 and 2024 — 4 October 2026
+
+Added seven groups and 21 researchers: one Class of 2024 group and six Class of 2023 groups. Adviser roles without supplied names remain unassigned. Photo-folder names supply the available middle initials and spelling, including Kent Brian H. Villacorta and Desirie Nicole C. Daligdig. Eleven matching portraits are added; ten new researchers without photos retain empty frames. The particulate-monitoring title now uses the supplied PM2.5 and Yolov5 wording.
+
+Current totals are 33 thesis groups, 84 unique researchers and 89 program memberships. There are 67 researcher portraits, two lab-head portraits and 17 empty researcher frames. Build, type checking, changed-file lint, 38 initial HTML/search-metadata pages, directory filters and 31 automated accessibility/layout scenarios passed; desktop and phone compositions were visually reviewed. These checks do not replace usability testing with disabled participants.

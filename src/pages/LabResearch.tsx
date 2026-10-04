@@ -9,7 +9,7 @@ export default function LabResearch() {
   const [params, setParams] = useSearchParams();
   const query = params.get("q") || "";
   const program = ["BS", "MS"].includes(params.get("program") || "") ? params.get("program") || "" : "";
-  const cohort = ["2024", "2025", "2026", "current"].includes(params.get("group") || "") ? params.get("group") || "" : "";
+  const cohort = ["2023", "2024", "2025", "2026", "current"].includes(params.get("group") || "") ? params.get("group") || "" : "";
   const visible = thesisGroups.filter(group => (!program || group.program === program) && (!cohort || (cohort === "current" ? group.graduationYear === null : String(group.graduationYear) === cohort)) && normalizeSearch([group.title, group.shortTitle, group.summary, ...group.researchers].join(" ")).includes(normalizeSearch(query.trim()))).sort((a, b) => compareMemberships(a, b) || a.shortTitle.localeCompare(b.shortTitle));
   const sections = [...new Set(visible.map(group => membershipHeading(group)))];
   function updateFilter(key: string, value: string) {
@@ -25,7 +25,7 @@ export default function LabResearch() {
       <div className="research-filters" role="group" aria-label="Optional research filters">
         <div className="research-search"><label htmlFor="research-search">Search by topic or researcher name</label><input id="research-search" type="search" value={query} onChange={event => updateFilter("q", event.target.value)} /></div>
         <div><label htmlFor="research-program">Program</label><select id="research-program" value={program} onChange={event => updateFilter("program", event.target.value)}><option value="">All programs</option><option value="BS">BS in Computer Applications</option><option value="MS">MS in Computer Applications</option></select></div>
-        <div><label htmlFor="research-group">Status / graduation class</label><select id="research-group" value={cohort} onChange={event => updateFilter("group", event.target.value)}><option value="">All groups</option><option value="2026">Graduates · Class of 2026</option><option value="2025">Graduates · Class of 2025</option><option value="2024">Graduates · Class of 2024</option><option value="current">Current researchers</option></select></div>
+        <div><label htmlFor="research-group">Status / graduation class</label><select id="research-group" value={cohort} onChange={event => updateFilter("group", event.target.value)}><option value="">All groups</option><option value="2026">Graduates · Class of 2026</option><option value="2025">Graduates · Class of 2025</option><option value="2024">Graduates · Class of 2024</option><option value="2023">Graduates · Class of 2023</option><option value="current">Current researchers</option></select></div>
         <button className="text-action" type="button" onClick={() => setParams({}, { replace: true })}>Show all research</button>
       </div>
       <p className="research-count" role="status" aria-live="polite" aria-atomic="true">{visible.length} {visible.length === 1 ? "thesis group" : "thesis groups"}</p>

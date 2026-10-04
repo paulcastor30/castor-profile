@@ -9,7 +9,7 @@ export default function LabPeople() {
   const [params, setParams] = useSearchParams();
   const query = params.get("q") || "";
   const program = ["BS", "MS"].includes(params.get("program") || "") ? params.get("program") || "" : "";
-  const cohort = ["2024", "2025", "2026", "current"].includes(params.get("group") || "") ? params.get("group") || "" : "";
+  const cohort = ["2023", "2024", "2025", "2026", "current"].includes(params.get("group") || "") ? params.get("group") || "" : "";
   const matches = people.map(person => ({ ...person, memberships: person.memberships.filter(group => (!program || group.program === program) && (!cohort || (cohort === "current" ? group.graduationYear === null : String(group.graduationYear) === cohort))) })).filter(person => person.memberships.length > 0 && normalizeSearch([person.name, ...person.memberships.flatMap(group => [group.title, group.shortTitle])].join(" ")).includes(normalizeSearch(query.trim()))).sort((a, b) => compareMemberships(a.memberships[0], b.memberships[0]) || surname(a.name).localeCompare(surname(b.name), "en", { sensitivity: "base" }) || a.name.localeCompare(b.name));
   const visible = matches;
   const sections = [...new Set(visible.map(person => membershipHeading(person.memberships[0])))];
@@ -31,7 +31,7 @@ export default function LabPeople() {
       <div className="research-filters people-filters" role="group" aria-label="Optional people filters">
         <div className="people-search"><label htmlFor="people-search">Search people by name or research topic</label><input id="people-search" type="search" value={query} onChange={event => updateFilter("q", event.target.value)} /></div>
         <div><label htmlFor="people-program">Program</label><select id="people-program" value={program} onChange={event => updateFilter("program", event.target.value)}><option value="">All programs</option><option value="BS">BSCA · Bachelor of Science</option><option value="MS">MSCA · Master of Science</option></select></div>
-        <div><label htmlFor="people-group">Status / graduation class</label><select id="people-group" value={cohort} onChange={event => updateFilter("group", event.target.value)}><option value="">Everyone</option><option value="2026">Graduates · Class of 2026</option><option value="2025">Graduates · Class of 2025</option><option value="2024">Graduates · Class of 2024</option><option value="current">Current researchers</option></select></div>
+        <div><label htmlFor="people-group">Status / graduation class</label><select id="people-group" value={cohort} onChange={event => updateFilter("group", event.target.value)}><option value="">Everyone</option><option value="2026">Graduates · Class of 2026</option><option value="2025">Graduates · Class of 2025</option><option value="2024">Graduates · Class of 2024</option><option value="2023">Graduates · Class of 2023</option><option value="current">Current researchers</option></select></div>
         <button className="text-action" type="button" onClick={() => setParams({}, { replace: true })}>Clear filters</button>
       </div>
       <p className="research-count" role="status" aria-live="polite" aria-atomic="true">{matches.length} {matches.length === 1 ? "researcher" : "researchers"} · {program ? `${program}CA` : "All programs"} · {cohort === "current" ? "Current research" : cohort ? `Class of ${cohort}` : "Everyone"}</p>

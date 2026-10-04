@@ -15,7 +15,7 @@ export type ThesisGroup = {
   title: string;
   summary: string;
   program: "MS" | "BS";
-  adviser: string;
+  adviser: string | null;
   coAdviser: string | null;
   additionalCoAdvisers?: string[];
   researchers: string[];
@@ -398,7 +398,7 @@ const groupRecords: ThesisGroup[] = [
 {
   "slug": "outdoor-particulate-monitoring",
   "shortTitle": "Outdoor particulate matter monitoring",
-  "title": "Development of Raspberry Pi-Based University Outdoor Airborne Particulate Matter (PM2.5) Acquisition System Using YOLOv5",
+  "title": "Development of Raspberry Pi-Based University Outdoor Airborne Particulate Matter (PM2.5) Acquisition System Using Yolov5",
   "summary": "A Raspberry Pi-based system designed to collect information about fine airborne particles outdoors at a university.",
   "adviser": "Paul Rodolf P. Castor",
   "coAdviser": "Dr. Adrian P. Galido",
@@ -457,6 +457,118 @@ const groupRecords: ThesisGroup[] = [
   ],
   "program": "BS",
   "graduationYear": 2024,
+  "outputs": []
+},
+{
+  "slug": "smartpipes-leak-detection",
+  "shortTitle": "Smartpipes: underground pipe leak detection",
+  "title": "Simulation of IoT-Enabled Smartpipes: Prototyping Underground Potential Leak Detection Method in Small-Diameter Plastic Pipes Using Larawan",
+  "summary": "A simulation and prototype exploring ways to detect potential leaks in small underground plastic pipes.",
+  "adviser": null,
+  "coAdviser": "Paul Rodolf P. Castor",
+  "researchers": [
+    "Michael Angelo L. Natingga Jr.",
+    "Aira Mae I. Sumile",
+    "Kent Brian H. Villacorta"
+  ],
+  "graduationYear": 2024,
+  "program": "BS",
+  "outputs": []
+},
+{
+  "slug": "rfid-room-scheduling",
+  "shortTitle": "RFID access and room scheduling",
+  "title": "RFID Login Using Esp8266 and Web-Based Scheduling System for Classroom and Laboratory Utilization",
+  "summary": "RFID-based login and a web scheduling system designed to manage classroom and laboratory use.",
+  "adviser": "Apple Rose B. Alce",
+  "coAdviser": "Paul Rodolf P. Castor",
+  "researchers": [
+    "Leah S. Apatan",
+    "Krizel Joy A. Atillo",
+    "Renz Patrick D. Santillan"
+  ],
+  "graduationYear": 2023,
+  "program": "BS",
+  "outputs": []
+},
+{
+  "slug": "scallion-hydroponics",
+  "shortTitle": "Scallion growth monitoring",
+  "title": "ESP32 Hydroponic Bed System for Growth Monitoring of Scallion (Allium fistulosum) Spices",
+  "summary": "An ESP32-based hydroponic bed system designed to monitor scallion growth.",
+  "adviser": "Apple Rose B. Alce",
+  "coAdviser": null,
+  "researchers": [
+    "Justin Jay B. Esconde",
+    "Christian Noel C. Eslit",
+    "Junesep Cagas"
+  ],
+  "graduationYear": 2023,
+  "program": "BS",
+  "outputs": []
+},
+{
+  "slug": "rids-reverse-vending",
+  "shortTitle": "RIDS-RVM: reverse vending and recycling",
+  "title": "Development of RIDS - RVM: a Reverse Vending Machine with Integrated Points System and Image-Based Detection and Segregation for Plastic Bottles and Aluminum Cans",
+  "summary": "A reverse vending machine designed to recognize and sort plastic bottles and aluminum cans, with an integrated points system.",
+  "adviser": "Apple Rose B. Alce",
+  "coAdviser": null,
+  "researchers": [
+    "Kent Roian R. Basit",
+    "Rochelle James Jaudian",
+    "Francis Miguel C. Colaljo"
+  ],
+  "graduationYear": 2023,
+  "program": "BS",
+  "outputs": []
+},
+{
+  "slug": "rainwater-harvesting-filtration",
+  "shortTitle": "Rainwater collection, filtration and monitoring",
+  "title": "Development and Evaluation of a Sustainable Rainwater Harvesting, Filter, and Monitoring System",
+  "summary": "A system designed to collect, filter and monitor rainwater.",
+  "adviser": "Apple Rose B. Alce",
+  "coAdviser": null,
+  "researchers": [
+    "Charlie A. Figuracion",
+    "Marichu O. Gaite",
+    "Jason Cuajao"
+  ],
+  "graduationYear": 2023,
+  "program": "BS",
+  "outputs": []
+},
+{
+  "slug": "rainwater-aeroponics",
+  "shortTitle": "Rainwater harvesting and aeroponics monitoring",
+  "title": "Real-Time Monitoring System for Integrated Rainwater Harvesting and Aeroponics: an IoT Applications",
+  "summary": "Connected sensors designed to monitor an integrated rainwater harvesting and aeroponics system.",
+  "adviser": "Apple Rose B. Alce",
+  "coAdviser": "Antonio S. Marajas",
+  "researchers": [
+    "Kilsey Deannielle G. Javier",
+    "Desirie Nicole C. Daligdig",
+    "Jasiel Emro S. Anasco"
+  ],
+  "graduationYear": 2023,
+  "program": "BS",
+  "outputs": []
+},
+{
+  "slug": "onion-garlic-vertical-farming",
+  "shortTitle": "Vertical farming for onion and garlic",
+  "title": "Smart Vertical Farming for (Allium Cepa) Onion and (Allium Sativum) Garlic Spices Using ESP8266",
+  "summary": "An ESP8266-based system designed to support vertical farming of onion and garlic.",
+  "adviser": "Apple Rose B. Alce",
+  "coAdviser": null,
+  "researchers": [
+    "Kyle Christian P. Belono",
+    "Teward G. Celesio",
+    "Jezryl Ann F. Colanse"
+  ],
+  "graduationYear": 2023,
+  "program": "BS",
   "outputs": []
 }
 ];
