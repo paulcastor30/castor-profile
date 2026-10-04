@@ -22,17 +22,17 @@ export const portraits: Record<string, PortraitAsset> = {
     "width": 560,
     "height": 560
   },
-  "Carla Jay Millang": {
+  "Carla Jay F. Millang": {
     "src": "/images/portraits/carla-jay-millang.webp",
     "width": 514,
     "height": 700
   },
-  "Keann Jumalon": {
+  "Keann F. Jumalon": {
     "src": "/images/portraits/keann-jumalon.webp",
     "width": 505,
     "height": 700
   },
-  "Fatima Tahira Asaali": {
+  "Fatima Tahira M. Asaali": {
     "src": "/images/portraits/fatima-tahira-asaali.webp",
     "width": 525,
     "height": 700
@@ -42,12 +42,12 @@ export const portraits: Record<string, PortraitAsset> = {
     "width": 466,
     "height": 700
   },
-  "Jaydee Gomera": {
+  "Jaydee A. Gomera": {
     "src": "/images/portraits/jaydee-gomera.webp",
     "width": 560,
     "height": 700
   },
-  "Janin Bihag": {
+  "Janin C. Bihag": {
     "src": "/images/portraits/janin-bihag.webp",
     "width": 560,
     "height": 700
@@ -57,12 +57,12 @@ export const portraits: Record<string, PortraitAsset> = {
     "width": 525,
     "height": 700
   },
-  "David James Arat": {
+  "David James E. Arat": {
     "src": "/images/portraits/david-james-arat.webp",
     "width": 560,
     "height": 700
   },
-  "Kirk Zyke Dream Gentiles": {
+  "Kirk Zyke Dream A. Gentiles": {
     "src": "/images/portraits/kirk-zyke-dream-gentiles.webp",
     "width": 560,
     "height": 700
@@ -72,17 +72,17 @@ export const portraits: Record<string, PortraitAsset> = {
     "width": 549,
     "height": 700
   },
-  "Julina Ybanez": {
+  "Julina C. Ybañez": {
     "src": "/images/portraits/julina-ybanez.webp",
     "width": 500,
     "height": 700
   },
-  "Armando Salud": {
+  "Armando M. Salud": {
     "src": "/images/portraits/armando-salud.webp",
     "width": 535,
     "height": 700
   },
-  "Jess Michael Padogdog": {
+  "Jess Michael S. Padogdog": {
     "src": "/images/portraits/jess-michael-padogdog.webp",
     "width": 560,
     "height": 700
@@ -132,12 +132,12 @@ export const portraits: Record<string, PortraitAsset> = {
     "width": 525,
     "height": 700
   },
-  "Generyll Rose Jalbuna": {
+  "Generyll Rose C. Jalbuna": {
     "src": "/images/portraits/generyll-rose-jalbuna.webp",
     "width": 550,
     "height": 700
   },
-  "Khatleen Kate Carvajal": {
+  "Khatleen Kate C. Carvajal": {
     "src": "/images/portraits/khatleen-kate-carvajal.webp",
     "width": 511,
     "height": 700
@@ -147,12 +147,12 @@ export const portraits: Record<string, PortraitAsset> = {
     "width": 525,
     "height": 700
   },
-  "Glyn Bryan Ebardo": {
+  "Glyn Bryan I. Ebardo": {
     "src": "/images/portraits/glyn-bryan-ebardo.webp",
     "width": 560,
     "height": 700
   },
-  "Jasmin Clair Collamar": {
+  "Jasmin Clair A. Collamar": {
     "src": "/images/portraits/jasmin-clair-collamar.webp",
     "width": 560,
     "height": 700
@@ -162,7 +162,7 @@ export const portraits: Record<string, PortraitAsset> = {
     "width": 560,
     "height": 700
   },
-  "Jehan Oswald Colao": {
+  "Jehan Oswald T. Colao": {
     "src": "/images/portraits/jehan-oswald-colao.webp",
     "width": 560,
     "height": 700
@@ -177,7 +177,7 @@ export const portraits: Record<string, PortraitAsset> = {
     "width": 560,
     "height": 700
   },
-  "Darel James Narvasa": {
+  "Darel James A. Narvasa": {
     "src": "/images/portraits/darel-james-narvasa.webp",
     "width": 560,
     "height": 700
@@ -192,7 +192,7 @@ export const portraits: Record<string, PortraitAsset> = {
     "width": 525,
     "height": 700
   },
-  "Kim Kundiman": {
+  "Kim D. Kundiman": {
     "src": "/images/portraits/kim-kundiman.webp",
     "width": 500,
     "height": 700

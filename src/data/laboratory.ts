@@ -109,9 +109,9 @@ const groupRecords: ThesisGroup[] = [
     "adviser": "Paul Rodolf P. Castor",
     "coAdviser": null,
     "researchers": [
-      "Jess Michael Padogdog",
+      "Jess Michael S. Padogdog",
       "Ral Angelo S. Lluisma",
-      "Fatima Tahira Asaali"
+      "Fatima Tahira M. Asaali"
     ],
     "graduationYear": 2026,
     "outputs": []
@@ -189,9 +189,9 @@ const groupRecords: ThesisGroup[] = [
     "adviser": "Paul Rodolf P. Castor",
     "coAdviser": "Apple Rose B. Alce",
     "researchers": [
-      "Kim Kundiman",
-      "Jaydee Gomera",
-      "Glyn Bryan Ebardo"
+      "Kim D. Kundiman",
+      "Jaydee A. Gomera",
+      "Glyn Bryan I. Ebardo"
     ],
     "graduationYear": 2025,
     "outputs": []
@@ -205,9 +205,9 @@ const groupRecords: ThesisGroup[] = [
     "adviser": "Paul Rodolf P. Castor",
     "coAdviser": "Apple Rose B. Alce",
     "researchers": [
-      "David James Arat",
-      "Jasmin Clair Collamar",
-      "Julina Ybanez"
+      "David James E. Arat",
+      "Jasmin Clair A. Collamar",
+      "Julina C. Ybañez"
     ],
     "graduationYear": 2025,
     "outputs": []
@@ -223,7 +223,7 @@ const groupRecords: ThesisGroup[] = [
     "researchers": [
       "Crischan G. Larita",
       "Errol Jade Carcedo",
-      "Kirk Zyke Dream Gentiles"
+      "Kirk Zyke Dream A. Gentiles"
     ],
     "graduationYear": 2025,
     "outputs": []
@@ -237,9 +237,9 @@ const groupRecords: ThesisGroup[] = [
     "adviser": "Apple Rose B. Alce",
     "coAdviser": "Paul Rodolf P. Castor",
     "researchers": [
-      "Keann Jumalon",
+      "Keann F. Jumalon",
       "Edrian Abilay",
-      "Janin Bihag"
+      "Janin C. Bihag"
     ],
     "graduationYear": 2025,
     "outputs": []
@@ -269,9 +269,9 @@ const groupRecords: ThesisGroup[] = [
     "adviser": "Paul Rodolf P. Castor",
     "coAdviser": "Apple Rose B. Alce",
     "researchers": [
-      "Darel James Narvasa",
-      "Jehan Oswald Colao",
-      "Generyll Rose Jalbuna"
+      "Darel James A. Narvasa",
+      "Jehan Oswald T. Colao",
+      "Generyll Rose C. Jalbuna"
     ],
     "graduationYear": 2025,
     "outputs": []
@@ -285,9 +285,9 @@ const groupRecords: ThesisGroup[] = [
     "adviser": "Paul Rodolf P. Castor",
     "coAdviser": "Apple Rose B. Alce",
     "researchers": [
-      "Khatleen Kate Carvajal",
-      "Carla Jay Millang",
-      "Armando Salud"
+      "Khatleen Kate C. Carvajal",
+      "Carla Jay F. Millang",
+      "Armando M. Salud"
     ],
     "graduationYear": 2025,
     "outputs": []

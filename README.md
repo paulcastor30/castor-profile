@@ -222,3 +222,7 @@ The lab now lists 26 thesis groups, 63 unique researchers and 68 program members
 ## Web Analytics — 4 October 2026
 
 Vercel Web Analytics uses the React SDK at the shared router root in production builds. It counts page views across the portfolio and lab, including client-side navigation. Search strings and URL fragments are removed; filter changes do not generate extra page views. No custom events or paid analytics add-ons are configured. Enable Web Analytics for this project in the Vercel dashboard and deploy to begin collection. Local development excludes analytics.
+
+## Researcher names — 4 October 2026
+
+Seventeen existing researcher display names now use the middle initials supplied in their photo-folder names. Names in folders without a middle initial stay unchanged. Directory memberships, thesis groups, portrait matching and derived search metadata share these names. Publication citation author names remain as published.
