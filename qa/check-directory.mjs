@@ -24,13 +24,14 @@ try {
  await p.reload();assert.equal(await p.locator('.person-entry').count(),count);
  }
  await p.getByRole('button',{name:'Clear filters'}).click();const names=new Set();let memberships=0;const ordering=[];
- const entries=await p.locator('.person-entry').evaluateAll(es=>es.map(e=>({name:e.dataset.person,category:e.closest('.people-category').getAttribute('aria-label')})));
+ const entries=await p.locator('.person-entry').evaluateAll(es=>es.map(e=>({name:e.dataset.person,display:e.querySelector("h3").textContent,category:e.closest('.people-category').getAttribute('aria-label')})));
  entries.forEach(e=>{assert(!names.has(e.name));names.add(e.name);ordering.push(e);});memberships=await p.locator('.person-membership').count();
  assert.equal(await p.locator('.people-pagination').count(),0);
  await p.goto(base+'/lab/people?page=2');await p.waitForLoadState('networkidle');assert.equal(await p.locator('.person-entry').count(),84);
  assert.equal(memberships,89);assert.equal(names.size,84);
  const categories=[...new Set(ordering.map(e=>e.category))];assert.deepEqual(categories,['Current researchers · MSCA','Current researchers · BSCA','Graduates · Class of 2026 · MSCA','Graduates · Class of 2026 · BSCA','Graduates · Class of 2025 · BSCA','Graduates · Class of 2024 · BSCA','Graduates · Class of 2023 · BSCA']);
  const surname=n=>n.replace(/\s+(Jr\.|III)$/i,'').trim().split(/\s+/).at(-1);
+ for(const entry of ordering){const suffix=entry.name.match(/\s+(Jr\.|III)$/i)?.[0]||"";const full=suffix?entry.name.slice(0,-suffix.length):entry.name;const last=surname(entry.name);assert.equal(entry.display,`${last}, ${full.slice(0,-last.length).trim()}${suffix}`);}
  for(const category of categories){const actual=ordering.filter(e=>e.category===category).map(e=>e.name);assert.deepEqual(actual,[...actual].sort((a,b)=>surname(a).localeCompare(surname(b),'en',{sensitivity:'base'})||a.localeCompare(b)));}
  await p.goto(base+'/lab/people?q=larita&program=BS&group=2025');await p.waitForLoadState('networkidle');assert.equal(await p.locator('.person-entry').count(),1);assert.equal(await p.locator('.person-membership').count(),1);assert((await p.locator('.person-membership').innerText()).includes('Automated feed mixing and dispensing'));
  await p.locator('.person-membership a').click();await p.waitForLoadState('networkidle');assert(p.url().endsWith('/lab/research/smart-swine-feeding'));

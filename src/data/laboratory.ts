@@ -516,7 +516,7 @@ const groupRecords: ThesisGroup[] = [
   "coAdviser": null,
   "researchers": [
     "Kent Roian R. Basit",
-    "Rochelle James Jaudian",
+    "Rochelle James C. Jaudian",
     "Francis Miguel C. Colaljo"
   ],
   "graduationYear": 2023,

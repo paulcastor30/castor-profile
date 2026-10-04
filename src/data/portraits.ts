@@ -1,6 +1,11 @@
 // Explicitly matched to the owner-supplied portrait folders.
 export type PortraitAsset = { src: string; width: number; height: number; framing?: { scale: number; origin: string } };
 export const portraits: Record<string, PortraitAsset> = {
+"Rochelle James C. Jaudian": {"src":"/images/portraits/rochelle-james-c-jaudian.webp","width":560,"height":700},
+"Charlie A. Figuracion": {"src":"/images/portraits/charlie-a-figuracion.webp","width":560,"height":700},
+"Christian Noel C. Eslit": {"src":"/images/portraits/christian-noel-c-eslit.webp","width":560,"height":700},
+"Kent Roian R. Basit": {"src":"/images/portraits/kent-roian-r-basit.webp","width":560,"height":700},
+"Leah S. Apatan": {"src":"/images/portraits/leah-s-apatan.webp","width":560,"height":700},
 "Michael Angelo L. Natingga Jr.": {"src":"/images/portraits/michael-angelo-l-natingga-jr.webp","width":560,"height":700},
 "Aira Mae I. Sumile": {"src":"/images/portraits/aira-mae-i-sumile.webp","width":560,"height":592},
 "Francis Miguel C. Colaljo": {"src":"/images/portraits/francis-miguel-c-colaljo.webp","width":558,"height":700},

@@ -15,9 +15,9 @@ try{
  await p.locator('img').evaluateAll(es=>es.forEach(e=>e.loading='eager'));
  await p.waitForFunction(()=>[...document.images].every(i=>i.complete&&i.naturalWidth>0));
  photos.push(...await p.locator('img').evaluateAll(es=>es.map(e=>({src:e.getAttribute('src'),alt:e.alt,hidden:!!e.closest('[aria-hidden="true"]'),width:e.width,height:e.height}))));
- lluisma ||= await p.getByRole('heading',{name:'Ral Angelo S. Lluisma',exact:true}).isVisible();
+ lluisma ||= await p.getByRole('heading',{name:'Lluisma, Ral Angelo S.',exact:true}).isVisible();
  }
- assert.equal(members,84);assert.equal(placements,67);assert.equal(missing,17);assert(lluisma);
+ assert.equal(members,84);assert.equal(placements,72);assert.equal(missing,12);assert(lluisma);
  assert(photos.every(i=>i.alt===''&&i.hidden&&i.width>0&&i.height>0));
  for(const src of new Set(photos.map(photo=>photo.src))){const r=await p.request.get(base+src);assert.equal(r.status(),200);assert.match(r.headers()['content-type'],/image\/webp/);assert((await r.body()).length<100000);}
  for(const route of ['/lab','/lab/contact']){await p.goto(base+route);await p.waitForLoadState('networkidle');assert.equal(await p.locator('.head-portrait img').count(),2);}
@@ -31,8 +31,8 @@ try{
  assert.equal(await failed.locator('.researcher-card .portrait-placeholder:not(:has(img))').count(),1);await failed.close();
  assert.deepEqual(errors,[]);
  const files=await readdir('dist/images');assert(!files.includes('researchers')&&!files.includes('lab head'));
- assert.equal((await readdir('dist/images/portraits' )).length,69);
- reports.push({check:'67 unique directory researcher photos, 2 lab heads, 17 empty researcher boxes, image decoding, small WebP assets, hidden redundant image descriptions, broken-image fallback, original uploads excluded from deployment',status:'passed'});
+ assert.equal((await readdir('dist/images/portraits' )).length,74);
+ reports.push({check:'72 unique directory researcher photos, 2 lab heads, 12 empty researcher boxes, image decoding, small WebP assets, hidden redundant image descriptions, broken-image fallback, original uploads excluded from deployment',status:'passed'});
  const axe=await readFile(process.env.AXE_SOURCE_PATH,'utf8');
  for(const s of [{name:'phone',width:390,height:900},{name:'desktop',width:1440,height:900},{name:'large-text',width:1280,height:900,large:true},{name:'reflow',width:320,height:256},{name:'forced-colors',width:390,height:900,colors:'active'}]){
   const page=await b.newPage({viewport:{width:s.width,height:s.height},forcedColors:s.colors||'none'});
