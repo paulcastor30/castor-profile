@@ -1,4 +1,5 @@
 import { BrowserRouter, Route, Routes } from "react-router-dom";
+import WebAnalytics from "./components/WebAnalytics";
 import SearchData from "./components/SearchData";
 import Index from "./pages/Index";
 import NotFound from "./pages/NotFound";
@@ -24,4 +25,4 @@ export function AppRoutes() {
   </Routes></>;
 }
 
-export default function App() { return <BrowserRouter><AppRoutes /></BrowserRouter>; }
+export default function App() { return <BrowserRouter><AppRoutes />{import.meta.env.PROD && <WebAnalytics />}</BrowserRouter>; }
