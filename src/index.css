@@ -396,3 +396,14 @@ html { scroll-behavior: auto; }
 
 .research-category { margin-block: 2rem 3rem; }
 .research-category > h2 { font-size: 1.75rem; line-height: 1.4; margin-bottom: 1.5rem; }
+
+/* Keep keyboard destinations visible when navigating long directories. */
+:where([tabindex="-1"]):focus-visible { outline: 3px solid #185240; outline-offset: 4px; }
+#research-directory-title, .research-category > h2 { scroll-margin-top: 7rem; }
+.additional-work .text-link { display: flex; width: fit-content; margin-top: .5rem; }
+@media (max-width: 540px), (max-height: 480px) {
+  #research-directory-title, .research-category > h2 { scroll-margin-top: 1.5rem; }
+}
+@media (forced-colors: active) {
+  :where([tabindex="-1"]):focus-visible { outline-color: Highlight; }
+}

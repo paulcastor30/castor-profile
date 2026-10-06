@@ -8,7 +8,7 @@ await mkdir('qa/screenshots/directory',{recursive:true});
 try {
  const p=await b.newPage();const errors=[];p.on('pageerror',e=>errors.push(e.message));
  await p.goto(base+'/lab/people');await p.waitForLoadState('networkidle');
- assert.equal(await p.locator('.person-entry').count(),63);assert.equal(await p.locator('details').count(),0);
+ assert.equal(await p.locator('.person-entry').count(),84);assert.equal(await p.locator('details').count(),0);
  assert((await p.locator('.people-category h2').allTextContents()).includes('Current researchers · MSCA'));
  const search=p.getByLabel('Search people by name or research topic');
  for(const [q,count,slug] of [['larita',1,'rice-tungro'],['castillo',1,'smart-goat-profiling'],['canete',1,'bell-pepper-aphid-damage'],['nonexistent-person',0,null]]){
@@ -18,26 +18,28 @@ try {
  if(q==='larita'){assert.equal(await p.locator('.person-membership').count(),2);assert((await p.locator('.person-entry').innerText()).includes('BSCA — Graduated, Class of 2025'));}
  await p.reload();assert.equal(await search.inputValue(),q);assert.equal(await p.locator('.person-entry').count(),count);
  }
- for(const [program,cohort,count] of [['MS','',5],['BS','',63],['','2026',16],['','2025',21],['','2024',15],['','current',16],['MS','2025',0],['MS','current',1],['BS','current',15]]){
+ for(const [program,cohort,count] of [['MS','',5],['BS','',84],['','2026',16],['','2025',21],['','2024',18],['','2023',18],['','current',16],['MS','2025',0],['MS','current',1],['BS','current',15]]){
  await p.getByRole('button',{name:'Clear filters'}).click();await p.getByLabel('Program',{exact:true}).selectOption(program);await p.getByLabel('Status / graduation class',{exact:true}).selectOption(cohort);
  assert((await p.getByRole('status').innerText()).startsWith(`${count} researchers`) || (count===1&&(await p.getByRole('status').innerText()).startsWith('1 researcher')));
  await p.reload();assert.equal(await p.locator('.person-entry').count(),count);
  }
  await p.getByRole('button',{name:'Clear filters'}).click();const names=new Set();let memberships=0;const ordering=[];
- const entries=await p.locator('.person-entry').evaluateAll(es=>es.map(e=>({name:e.dataset.person,category:e.closest('.people-category').getAttribute('aria-label')})));
+ const entries=await p.locator('.person-entry').evaluateAll(es=>es.map(e=>({name:e.dataset.person,display:e.querySelector("h3").textContent,category:e.closest('.people-category').getAttribute('aria-label')})));
  entries.forEach(e=>{assert(!names.has(e.name));names.add(e.name);ordering.push(e);});memberships=await p.locator('.person-membership').count();
  assert.equal(await p.locator('.people-pagination').count(),0);
- await p.goto(base+'/lab/people?page=2');await p.waitForLoadState('networkidle');assert.equal(await p.locator('.person-entry').count(),63);
- assert.equal(memberships,68);assert.equal(names.size,63);
- const categories=[...new Set(ordering.map(e=>e.category))];assert.deepEqual(categories,['Current researchers · MSCA','Current researchers · BSCA','Graduates · Class of 2026 · MSCA','Graduates · Class of 2026 · BSCA','Graduates · Class of 2025 · BSCA','Graduates · Class of 2024 · BSCA']);
+ await p.goto(base+'/lab/people?page=2');await p.waitForLoadState('networkidle');assert.equal(await p.locator('.person-entry').count(),84);
+ assert.equal(memberships,89);assert.equal(names.size,84);
+ const categories=[...new Set(ordering.map(e=>e.category))];assert.deepEqual(categories,['Current researchers · MSCA','Current researchers · BSCA','Graduates · Class of 2026 · MSCA','Graduates · Class of 2026 · BSCA','Graduates · Class of 2025 · BSCA','Graduates · Class of 2024 · BSCA','Graduates · Class of 2023 · BSCA']);
  const surname=n=>n.replace(/\s+(Jr\.|III)$/i,'').trim().split(/\s+/).at(-1);
+ for(const entry of ordering){const suffix=entry.name.match(/\s+(Jr\.|III)$/i)?.[0]||"";const full=suffix?entry.name.slice(0,-suffix.length):entry.name;const last=surname(entry.name);assert.equal(entry.display,`${last}, ${full.slice(0,-last.length).trim()}${suffix}`);}
  for(const category of categories){const actual=ordering.filter(e=>e.category===category).map(e=>e.name);assert.deepEqual(actual,[...actual].sort((a,b)=>surname(a).localeCompare(surname(b),'en',{sensitivity:'base'})||a.localeCompare(b)));}
  await p.goto(base+'/lab/people?q=larita&program=BS&group=2025');await p.waitForLoadState('networkidle');assert.equal(await p.locator('.person-entry').count(),1);assert.equal(await p.locator('.person-membership').count(),1);assert((await p.locator('.person-membership').innerText()).includes('Automated feed mixing and dispensing'));
  await p.locator('.person-membership a').click();await p.waitForLoadState('networkidle');assert(p.url().endsWith('/lab/research/smart-swine-feeding'));
  await p.goto(base+'/lab/people');await p.waitForLoadState('networkidle');
- const jumps=p.getByRole('navigation',{name:'Jump to a people section'}).getByRole('link');assert.equal(await jumps.count(),6);
- for(let i=0;i<6;i++){const href=await jumps.nth(i).getAttribute('href');await jumps.nth(i).click();const id=href.split('#')[1];await p.waitForFunction(id=>document.activeElement.id===id,id);assert((await p.locator('#'+id).innerText()).length>0);}
+ const jumps=p.getByRole('navigation',{name:'Jump to a people section'}).getByRole('link');assert.equal(await jumps.count(),7);
+ for(let i=0;i<7;i++){const href=await jumps.nth(i).getAttribute('href');await jumps.nth(i).click();const id=href.split('#')[1];await p.waitForFunction(id=>document.activeElement.id===id,id);assert((await p.locator('#'+id).innerText()).length>0);}
  await p.getByRole('link',{name:'Back to researcher search'}).click();await p.waitForFunction(()=>document.activeElement.id==='people-directory-title');
+ await p.getByLabel('Program',{exact:true}).selectOption('MS');await p.getByRole('link',{name:'Back to researcher search'}).click();assert.equal(await p.getByLabel('Program',{exact:true}).inputValue(),'MS');
  await p.getByRole('link',{name:'View and copy lab email addresses'}).click();await p.getByRole('heading',{name:'Contact the laboratory',exact:true}).waitFor();assert.equal(await p.locator('.lab-contact-card input').count(),2);
  assert.deepEqual(errors,[]);await p.close();
  for(const s of [{name:'phone',width:390,height:900},{name:'desktop',width:1440,height:900},{name:'large-text',width:1280,height:900,large:true},{name:'reflow',width:320,height:256},{name:'forced-colors',width:390,height:900,colors:'active'}]){
@@ -54,5 +56,5 @@ try {
  }
  await page.close();
  }
- await writeFile('qa/directory-results.json',JSON.stringify({journeys:'63 unique people; 68 program memberships; program/class filters; alphabetical surname ordering; current-first, newest-class-first grouping; full scrollable directory; visible portraits; research links; filter focus and URL persistence',reports},null,2));console.log('Individual directory journeys and 10 accessibility/layout scenarios passed.');
+ await writeFile('qa/directory-results.json',JSON.stringify({journeys:'84 unique people; 89 program memberships; program/class filters; alphabetical surname ordering; current-first, newest-class-first grouping; full scrollable directory; visible portraits; research links; filter focus and URL persistence',reports},null,2));console.log('Individual directory journeys and 10 accessibility/layout scenarios passed.');
 }finally{await b.close();}

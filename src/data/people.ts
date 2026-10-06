@@ -11,3 +11,11 @@ export const compareMemberships = (a: ThesisGroup, b: ThesisGroup) => Number(a.g
 export const people = [...directory.values()].map(person => ({ ...person, memberships: [...person.memberships].sort((a, b) => compareMemberships(a, b)) }));
 export const surname = (name: string) => name.replace(/\s+(Jr\.|III)$/i, "").trim().split(/\s+/).at(-1) || name;
 export const membershipHeading = (group: ThesisGroup) => `${group.graduationYear ? `Graduates · Class of ${group.graduationYear}` : "Current researchers"} · ${group.program}CA`;
+
+export function surnameFirst(name: string) {
+  const suffix = name.match(/\s+(Jr\.|III)$/i)?.[0] || "";
+  const fullName = suffix ? name.slice(0, -suffix.length) : name;
+  const familyName = surname(name);
+  const givenNames = fullName.slice(0, -(familyName.length)).trim();
+  return givenNames ? `${familyName}, ${givenNames}${suffix}` : name;
+}

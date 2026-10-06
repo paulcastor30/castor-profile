@@ -222,3 +222,17 @@ The lab now lists 26 thesis groups, 63 unique researchers and 68 program members
 ## Web Analytics — 4 October 2026
 
 Vercel Web Analytics uses the React SDK at the shared router root in production builds. It counts page views across the portfolio and lab, including client-side navigation. Search strings and URL fragments are removed; filter changes do not generate extra page views. No custom events or paid analytics add-ons are configured. Enable Web Analytics for this project in the Vercel dashboard and deploy to begin collection. Local development excludes analytics.
+
+## Researcher names — 4 October 2026
+
+Seventeen existing researcher display names now use the middle initials supplied in their photo-folder names. Names in folders without a middle initial stay unchanged. Directory memberships, thesis groups, portrait matching and derived search metadata share these names. Publication citation author names remain as published.
+
+## BSCA Classes of 2023 and 2024 — 4 October 2026
+
+Added seven groups and 21 researchers: one Class of 2024 group and six Class of 2023 groups. Adviser roles without supplied names remain unassigned. Photo-folder names supply the available middle initials and spelling, including Kent Brian H. Villacorta and Desirie Nicole C. Daligdig. Eleven matching portraits are added; ten new researchers without photos retain empty frames. The particulate-monitoring title now uses the supplied PM2.5 and Yolov5 wording.
+
+Current totals are 33 thesis groups, 84 unique researchers and 89 program memberships. There are 67 researcher portraits, two lab-head portraits and 17 empty researcher frames. Build, type checking, changed-file lint, 38 initial HTML/search-metadata pages, directory filters and 31 automated accessibility/layout scenarios passed; desktop and phone compositions were visually reviewed. These checks do not replace usability testing with disabled participants.
+
+## Additional researcher portraits — 4 October 2026
+
+Added supplied portraits for Leah S. Apatan, Kent Roian R. Basit, Christian Noel C. Eslit, Charlie A. Figuracion and Rochelle James C. Jaudian. Jaudian’s middle initial comes from the photo folder. Existing optimized portraits remain available. The directory now shows 72 researcher photos and 12 empty frames; two lab heads bring the optimized photo total to 74.
