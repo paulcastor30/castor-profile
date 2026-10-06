@@ -35,6 +35,8 @@ const projects = [
     stack: ["JavaScript", "Word and PDF export"],
     role: "Developer",
     repository: "https://github.com/paulcastor30/dtr-fdtr-generator",
+    website: "https://paulcastor30.github.io/dtr-fdtr-generator/",
+    websiteLabel: "Open the time record generator",
   },
   {
     title: "Department of Computer Applications website",
@@ -42,6 +44,8 @@ const projects = [
     stack: ["React", "TypeScript", "Django"],
     role: "Maintainer",
     repository: "https://github.com/paulcastor30/Department-of-Computer-Applications",
+    website: "https://msuiit-comapps.vercel.app",
+    websiteLabel: "Visit the department website",
   },
   {
     title: "Calamansi disease detection",
@@ -123,10 +127,10 @@ export default function Projects() {
           ))}
         </div>
         <details className="disclosure">
-          <summary>More projects</summary>
+          <summary>More projects, including web apps</summary>
           <div className="additional-work">
             {projects.slice(3).map(project => (
-              <article key={project.title}><h3>{project.title}</h3><p>{project.desc}</p><p className="work-role">My role: {project.role.toLowerCase()}</p><p className="technology">Tools and platform: {project.stack.join(", ")}</p>{project.period && <p>Research period: {project.period}</p>}{project.group && <Link className="text-link" to={`/lab/research/${project.group}`}>Meet the {project.title.toLowerCase()} team</Link>}{project.repository && <a className="text-link" href={project.repository} aria-label={`View source code on GitHub for ${project.title}`}>View source code on GitHub</a>}</article>
+              <article key={project.title}><h3>{project.title}</h3><p>{project.desc}</p><p className="work-role">My role: {project.role.toLowerCase()}</p><p className="technology">Tools and platform: {project.stack.join(", ")}</p>{project.period && <p>Research period: {project.period}</p>}{project.group && <Link className="text-link" to={`/lab/research/${project.group}`}>Meet the {project.title.toLowerCase()} team</Link>}{project.website && <a className="text-link" href={project.website}>{project.websiteLabel}</a>}{project.repository && <a className="text-link" href={project.repository} aria-label={`View source code on GitHub for ${project.title}`}>View source code on GitHub</a>}</article>
             ))}
           </div>
         </details>

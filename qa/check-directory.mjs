@@ -39,6 +39,7 @@ try {
  const jumps=p.getByRole('navigation',{name:'Jump to a people section'}).getByRole('link');assert.equal(await jumps.count(),7);
  for(let i=0;i<7;i++){const href=await jumps.nth(i).getAttribute('href');await jumps.nth(i).click();const id=href.split('#')[1];await p.waitForFunction(id=>document.activeElement.id===id,id);assert((await p.locator('#'+id).innerText()).length>0);}
  await p.getByRole('link',{name:'Back to researcher search'}).click();await p.waitForFunction(()=>document.activeElement.id==='people-directory-title');
+ await p.getByLabel('Program',{exact:true}).selectOption('MS');await p.getByRole('link',{name:'Back to researcher search'}).click();assert.equal(await p.getByLabel('Program',{exact:true}).inputValue(),'MS');
  await p.getByRole('link',{name:'View and copy lab email addresses'}).click();await p.getByRole('heading',{name:'Contact the laboratory',exact:true}).waitFor();assert.equal(await p.locator('.lab-contact-card input').count(),2);
  assert.deepEqual(errors,[]);await p.close();
  for(const s of [{name:'phone',width:390,height:900},{name:'desktop',width:1440,height:900},{name:'large-text',width:1280,height:900,large:true},{name:'reflow',width:320,height:256},{name:'forced-colors',width:390,height:900,colors:'active'}]){

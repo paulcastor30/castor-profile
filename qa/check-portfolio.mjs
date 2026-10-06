@@ -37,7 +37,7 @@ try {
     await page.getByRole('status').filter({ hasText: 'It is selected in the email field' }).waitFor();
     assert.equal(await page.evaluate(() => document.activeElement.id), 'contact-email');
     assert.equal(await page.locator('#contact-email').evaluate(el => el.selectionEnd - el.selectionStart), 'paulrodolf.castor@g.msuiit.edu.ph'.length);
-    for (const summary of ['My education, experience, and academic service', 'More projects', 'Research publications']) {
+    for (const summary of ['My education, experience, and academic service', 'More projects, including web apps', 'Research publications']) {
       const control = page.locator('summary').filter({ hasText: summary });
       await control.focus();
       await page.keyboard.press('Enter');

@@ -20,17 +20,23 @@ export default function LabResearch() {
   return (
     <section className="portfolio-container lab-page">
       <p className="eyebrow">Thesis groups</p><h1>Research</h1>
-      <p className="lab-lede">Explore our research topics, teams, and academic supervision. Search by topic or researcher name, or browse all groups below.</p>
+      <p className="lab-lede" id="research-directory-title" tabIndex={-1}>Explore our research topics, teams, and academic supervision. Search by topic or researcher name, or browse all groups below.</p>
       <p className="lab-explanation">BSCA means Bachelor of Science in Computer Applications; MSCA means Master of Science in Computer Applications. Ongoing groups appear first, then graduates by newest class. Projects are alphabetical within each program and class.</p>
       <div className="research-filters" role="group" aria-label="Optional research filters">
         <div className="research-search"><label htmlFor="research-search">Search by topic or researcher name</label><input id="research-search" type="search" value={query} onChange={event => updateFilter("q", event.target.value)} /></div>
         <div><label htmlFor="research-program">Program</label><select id="research-program" value={program} onChange={event => updateFilter("program", event.target.value)}><option value="">All programs</option><option value="BS">BS in Computer Applications</option><option value="MS">MS in Computer Applications</option></select></div>
-        <div><label htmlFor="research-group">Status / graduation class</label><select id="research-group" value={cohort} onChange={event => updateFilter("group", event.target.value)}><option value="">All groups</option><option value="2026">Graduates · Class of 2026</option><option value="2025">Graduates · Class of 2025</option><option value="2024">Graduates · Class of 2024</option><option value="2023">Graduates · Class of 2023</option><option value="current">Current researchers</option></select></div>
+        <div><label htmlFor="research-group">Status / graduation class</label><select id="research-group" value={cohort} onChange={event => updateFilter("group", event.target.value)}><option value="">All groups</option><option value="current">Current researchers</option><option value="2026">Graduates · Class of 2026</option><option value="2025">Graduates · Class of 2025</option><option value="2024">Graduates · Class of 2024</option><option value="2023">Graduates · Class of 2023</option></select></div>
         <button className="text-action" type="button" onClick={() => setParams({}, { replace: true })}>Show all research</button>
       </div>
       <p className="research-count" role="status" aria-live="polite" aria-atomic="true">{visible.length} {visible.length === 1 ? "thesis group" : "thesis groups"}</p>
       {sections.length > 1 && <nav className="research-section-links" aria-label="Jump to a research section"><p>Jump to a section:</p>{sections.map(heading => <Link className="text-link" key={heading} to={`/lab/research${params.size ? `?${params.toString()}` : ""}#${sectionId(heading)}`}>{heading.replace("Current researchers", "Ongoing research")}</Link>)}</nav>}
       {visible.length ? <>{sections.map(heading => <section className="research-category" key={heading} aria-labelledby={sectionId(heading)}><h2 id={sectionId(heading)} tabIndex={-1}>{heading.replace("Current researchers", "Ongoing research")}</h2><div className="research-grid">{visible.filter(group => membershipHeading(group) === heading).map(group => <ResearchCard key={group.slug} group={group} />)}</div></section>)}</> : <div className="empty-results"><h2>No groups match these filters</h2><p>Try another topic or name, change the filters, or select “Show all research”.</p></div>}
+      <section className="project-contact" aria-labelledby="research-contact-title">
+        <h2 id="research-contact-title">Interested in our research?</h2>
+        <p>Ask about a thesis group, research collaboration, or an idea you would like to discuss.</p>
+        <Link className="primary-action" to="/lab/contact">Contact the lab heads</Link>
+      </section>
+      <div className="actions"><Link className="text-link" to={`/lab/research${params.size ? `?${params.toString()}` : ""}#research-directory-title`}>Back to research search</Link></div>
     </section>
   );
 }
