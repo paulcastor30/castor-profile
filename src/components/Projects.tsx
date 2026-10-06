@@ -30,6 +30,20 @@ const projects = [
     period: "August 2024 – May 2025",
   },
   {
+    title: "Daily and faculty time record generator",
+    desc: "A browser app for preparing Daily Time Records (DTR) and Faculty Daily Time Records (FDTR), reviewing monthly entries, and downloading Word or PDF documents. Information stays in the user's browser.",
+    stack: ["JavaScript", "Word and PDF export"],
+    role: "Developer",
+    repository: "https://github.com/paulcastor30/dtr-fdtr-generator",
+  },
+  {
+    title: "Department of Computer Applications website",
+    desc: "A website for MSU-IIT’s Department of Computer Applications, bringing together program information, faculty profiles, news, and a thesis process guide for undergraduate and master’s students.",
+    stack: ["React", "TypeScript", "Django"],
+    role: "Maintainer",
+    repository: "https://github.com/paulcastor30/Department-of-Computer-Applications",
+  },
+  {
     title: "Calamansi disease detection",
     desc: "A small device uses image recognition to help detect citrus greening, a disease affecting calamansi plants.",
     stack: ["ESP32-S3", "C/C++", "Edge Impulse"],
@@ -109,10 +123,10 @@ export default function Projects() {
           ))}
         </div>
         <details className="disclosure">
-          <summary>More engineering projects</summary>
+          <summary>More projects</summary>
           <div className="additional-work">
             {projects.slice(3).map(project => (
-              <article key={project.title}><h3>{project.title}</h3><p>{project.desc}</p><p className="work-role">My role: {project.role.toLowerCase()}</p><p className="technology">Tools and platform: {project.stack.join(", ")}</p>{project.period && <p>Research period: {project.period}</p>}{project.group && <Link className="text-link" to={`/lab/research/${project.group}`}>Meet the {project.title.toLowerCase()} team</Link>}</article>
+              <article key={project.title}><h3>{project.title}</h3><p>{project.desc}</p><p className="work-role">My role: {project.role.toLowerCase()}</p><p className="technology">Tools and platform: {project.stack.join(", ")}</p>{project.period && <p>Research period: {project.period}</p>}{project.group && <Link className="text-link" to={`/lab/research/${project.group}`}>Meet the {project.title.toLowerCase()} team</Link>}{project.repository && <a className="text-link" href={project.repository} aria-label={`View source code on GitHub for ${project.title}`}>View source code on GitHub</a>}</article>
             ))}
           </div>
         </details>
