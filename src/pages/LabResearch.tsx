@@ -18,10 +18,10 @@ export default function LabResearch() {
     setParams(next, { replace: true });
   }
   return (
-    <section className="portfolio-container lab-page">
+    <section className="portfolio-container lab-page research-directory">
       <p className="eyebrow">Thesis groups</p><h1>Research</h1>
-      <p className="lab-lede" id="research-directory-title" tabIndex={-1}>Explore our research topics, teams, and academic supervision. Search by topic or researcher name, or browse all groups below.</p>
-      <p className="lab-explanation">BSCA means Bachelor of Science in Computer Applications; MSCA means Master of Science in Computer Applications. Ongoing groups appear first, then graduates by newest class. Projects are alphabetical within each program and class.</p>
+      <p className="lab-lede" id="research-directory-title" tabIndex={-1}>Find thesis groups by topic, researcher, program, or graduation class.</p>
+      <details className="disclosure directory-guide"><summary>Programs, ordering, and project status</summary><p className="lab-explanation">BSCA means Bachelor of Science in Computer Applications; MSCA means Master of Science in Computer Applications. Ongoing groups appear first, then graduates by newest class. Projects are alphabetical within each program and class.</p><p className="lab-explanation">Graduation years describe the researchers. They do not confirm that a system is complete, deployed, or maintained. Research outputs list their own acceptance or publication status.</p></details>
       <div className="research-filters" role="group" aria-label="Optional research filters">
         <div className="research-search"><label htmlFor="research-search">Search by topic or researcher name</label><input id="research-search" type="search" value={query} onChange={event => updateFilter("q", event.target.value)} /></div>
         <div><label htmlFor="research-program">Program</label><select id="research-program" value={program} onChange={event => updateFilter("program", event.target.value)}><option value="">All programs</option><option value="BS">BS in Computer Applications</option><option value="MS">MS in Computer Applications</option></select></div>

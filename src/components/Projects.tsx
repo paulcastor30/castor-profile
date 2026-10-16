@@ -108,13 +108,16 @@ const projects = [
 ];
 
 
+const featuredProjects = [projects[0], projects[3], projects[2]];
+const additionalProjects = projects.filter(project => !featuredProjects.includes(project));
+
 export default function Projects() {
   return (
     <section id="projects" tabIndex={-1} className="portfolio-section" aria-labelledby="work-title">
       <div className="portfolio-container">
         <div className="section-introduction"><div><p className="eyebrow">Ideas put into practice</p><h2 id="work-title">My work</h2></div><p>A few examples of the systems I’ve worked on, and what they’re built to do.</p></div>
         <div className="featured-work">
-          {projects.slice(0, 3).map((project, index) => (
+          {featuredProjects.map((project, index) => (
             <article className="work-card" key={project.title}>
               <p className="work-number">Project 0{index + 1}</p>
               <h3>{project.title}</h3>
@@ -122,22 +125,21 @@ export default function Projects() {
               {project.period && <p className="work-role">Research period: {project.period}</p>}
               <p className="work-role">My role: {project.role.toLowerCase()}</p>
               {project.group && <Link className="text-link" to={`/lab/research/${project.group}`}>Meet the {project.group === "goat-geofencing" ? "goat monitoring" : "sign-language"} research team</Link>}
+              {project.website && <a className="text-link" href={project.website}>{project.websiteLabel}</a>}
+              {project.repository && <a className="text-link" href={project.repository} aria-label={`View source code on GitHub for ${project.title}`}>View source code on GitHub</a>}
               <a className="text-link" href={`mailto:${profile.email}?subject=${encodeURIComponent(`Question about ${project.title}`)}`} aria-label={`Email me about this project: ${project.title}`}>Email me about this project <span aria-hidden="true">↗</span></a>
             </article>
           ))}
         </div>
         <details className="disclosure">
-          <summary>More projects, including web apps</summary>
+          <summary>More engineering and web projects</summary>
           <div className="additional-work">
-            {projects.slice(3).map(project => (
+            {additionalProjects.map(project => (
               <article key={project.title}><h3>{project.title}</h3><p>{project.desc}</p><p className="work-role">My role: {project.role.toLowerCase()}</p><p className="technology">Tools and platform: {project.stack.join(", ")}</p>{project.period && <p>Research period: {project.period}</p>}{project.group && <Link className="text-link" to={`/lab/research/${project.group}`}>Meet the {project.title.toLowerCase()} team</Link>}{project.website && <a className="text-link" href={project.website}>{project.websiteLabel}</a>}{project.repository && <a className="text-link" href={project.repository} aria-label={`View source code on GitHub for ${project.title}`}>View source code on GitHub</a>}</article>
             ))}
           </div>
         </details>
-        <details className="disclosure">
-          <summary>Research publications</summary>
-          <Publications />
-        </details>
+        <Publications />
       </div>
     </section>
   );

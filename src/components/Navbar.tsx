@@ -8,6 +8,7 @@ export default function Navbar() {
         <div className="navigation-links">
           <a href="#about">About</a>
           <a href="#projects">My work</a>
+          <a href="#publications">Publications</a>
           <Link to="/lab">Laboratory</Link>
           <a href="#contact">Contact</a>
         </div>

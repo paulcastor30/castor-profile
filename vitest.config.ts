@@ -1,5 +1,6 @@
+import "./scripts/swc-cache.mjs";
 import { defineConfig } from "vitest/config";
-import react from "@vitejs/plugin-react-swc";
+const { default: react } = await import("@vitejs/plugin-react-swc");
 import path from "path";
 
 export default defineConfig({

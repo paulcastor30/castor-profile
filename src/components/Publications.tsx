@@ -9,14 +9,20 @@ function Paper({ paper }: { paper: ResearchPaper }) {
   </article>;
 }
 
+// A first-author engineering paper and a recent collaborative review.
+const selectedPapers = [publications[3], publications[0]];
+const otherPapers = publications.filter(paper => !selectedPapers.includes(paper));
+
 export default function Publications() {
-  return <div className="publication-list">
+  return <section id="publications" tabIndex={-1} className="publication-list selected-publications" aria-labelledby="publications-title">
+    <h2 id="publications-title">Research publications</h2>
     <p>Publications and conference papers from my research and collaborations. Linked titles open the publisher’s page.</p>
-    <section aria-labelledby="published-papers-title"><h3 id="published-papers-title">Published papers</h3>{publications.map(paper => <Paper key={paper.title} paper={paper} />)}</section>
+    <section aria-labelledby="selected-papers-title"><h3 id="selected-papers-title">Selected published papers</h3>{selectedPapers.map(paper => <Paper key={paper.title} paper={paper} />)}</section>
+    <details className="disclosure"><summary>More published papers · {otherPapers.length} entries</summary><section aria-labelledby="published-papers-title"><h3 id="published-papers-title">More published papers</h3>{otherPapers.map(paper => <Paper key={paper.title} paper={paper} />)}</section></details>
     <details className="disclosure conference-papers">
       <summary>Conference papers · {conferencePapers.length} entries</summary>
       <div><h3>Conference papers</h3><p>“Accepted” marks a confirmed acceptance. Other entries are listed as conference papers; the conference date does not indicate that a paper was presented or published. Publisher links will be added when available.</p>{conferencePapers.map(paper => <Paper key={paper.title} paper={paper} />)}</div>
     </details>
     <a className="text-link" href={`mailto:${profile.email}?subject=Question%20about%20your%20research`}>Email me about a research paper <span aria-hidden="true">↗</span></a>
-  </div>;
+  </section>;
 }
