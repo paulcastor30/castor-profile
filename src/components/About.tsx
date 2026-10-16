@@ -11,7 +11,7 @@ export default function About() {
         <div className="about-heading"><p className="eyebrow">Who I am</p><h2 id="about-title">About me</h2></div>
         <div className="about-introduction">
           <div className="about-copy">
-            <p>I’m an engineer, researcher, and educator based in the Philippines. I work with small computers, sensors, and connected devices—from air quality monitoring to automated irrigation.</p>
+            <p>I’m an engineer, researcher, and educator based in the Philippines. My work in embedded systems and artificial intelligence of things (AIoT) uses small computers, sensors, and connected devices—from air quality monitoring to automated irrigation.</p>
             <p>I’m an Assistant Professor III at Mindanao State University – Iligan Institute of Technology (MSU-IIT). My work brings together practical engineering, research, and teaching.</p>
             <p>My recent research explores disease detection in crops, connected sensors, and devices that recognize sign-language letters. I help students turn their ideas into working projects.</p>
           </div>
