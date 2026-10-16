@@ -1,6 +1,9 @@
 // Explicitly matched to the owner-supplied portrait folders.
 export type PortraitAsset = { src: string; width: number; height: number; framing?: { scale: number; origin: string } };
 export const portraits: Record<string, PortraitAsset> = {
+  "Khara Myka T. Concepcion": { src: "/images/portraits/khara-myka-t-concepcion.webp", width: 461, height: 640 },
+  "Karl Vincent C. Remo": { src: "/images/portraits/karl-vincent-c-remo.webp", width: 560, height: 560 },
+  "Cassandra Khan P. Mendoza": { src: "/images/portraits/cassandra-khan-p-mendoza.webp", width: 560, height: 560 },
 "Rochelle James C. Jaudian": {"src":"/images/portraits/rochelle-james-c-jaudian.webp","width":560,"height":700},
 "Charlie A. Figuracion": {"src":"/images/portraits/charlie-a-figuracion.webp","width":560,"height":700},
 "Christian Noel C. Eslit": {"src":"/images/portraits/christian-noel-c-eslit.webp","width":560,"height":700},
