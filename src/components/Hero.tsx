@@ -6,8 +6,8 @@ export default function Hero() {
     <section id="home" tabIndex={-1} className="hero portfolio-container" aria-labelledby="intro-title">
       <div className="hero-copy">
         <p className="eyebrow">Engineer · Researcher · Educator</p>
-        <h1 id="intro-title">Hi, I’m Paul<span aria-hidden="true">.</span></h1>
-        <p className="full-name">Paul Rodolf P. Castor</p>
+        <p className="hero-greeting">Hi, I’m Paul Rodolf P. Castor.</p>
+        <h1 id="intro-title">Embedded systems &amp; AIoT researcher<span aria-hidden="true">.</span></h1>
         <p className="hero-description">I build connected sensors and practical tools for environmental monitoring, agriculture, and assistive technology.</p>
         <p className="hero-affiliation">Assistant Professor at Mindanao State University – Iligan Institute of Technology (MSU-IIT), Philippines.</p>
         <div className="actions">

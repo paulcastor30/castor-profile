@@ -1,6 +1,5 @@
 import Publications from "./Publications";
 import { Link } from "react-router-dom";
-import { profile } from "@/lib/profile";
 
 const projects = [
   {
@@ -124,10 +123,16 @@ export default function Projects() {
               <p className="work-description">{project.desc}</p>
               {project.period && <p className="work-role">Research period: {project.period}</p>}
               <p className="work-role">My role: {project.role.toLowerCase()}</p>
-              {project.group && <Link className="text-link" to={`/lab/research/${project.group}`}>Meet the {project.group === "goat-geofencing" ? "goat monitoring" : "sign-language"} research team</Link>}
-              {project.website && <a className="text-link" href={project.website}>{project.websiteLabel}</a>}
-              {project.repository && <a className="text-link" href={project.repository} aria-label={`View source code on GitHub for ${project.title}`}>View source code on GitHub</a>}
-              <a className="text-link" href={`mailto:${profile.email}?subject=${encodeURIComponent(`Question about ${project.title}`)}`} aria-label={`Email me about this project: ${project.title}`}>Email me about this project <span aria-hidden="true">↗</span></a>
+              <div className="project-actions">
+                {project.website ? (
+                  <a className="text-link project-primary-action" href={project.website}>{project.websiteLabel}<span aria-hidden="true">↗</span></a>
+                ) : project.group ? (
+                  <Link className="text-link project-primary-action" to={`/lab/research/${project.group}`}>View research details<span aria-hidden="true">→</span></Link>
+                ) : (
+                  <a className="text-link project-primary-action" href="#publications">Read related publications<span aria-hidden="true">↓</span></a>
+                )}
+                {project.repository && <a className="text-link project-secondary-action" href={project.repository} aria-label={`View source code on GitHub for ${project.title}`}>View source code on GitHub</a>}
+              </div>
             </article>
           ))}
         </div>

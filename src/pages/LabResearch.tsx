@@ -29,7 +29,10 @@ export default function LabResearch() {
         <button className="text-action" type="button" onClick={() => setParams({}, { replace: true })}>Show all research</button>
       </div>
       <p className="research-count" role="status" aria-live="polite" aria-atomic="true">{visible.length} {visible.length === 1 ? "thesis group" : "thesis groups"}</p>
-      {sections.length > 1 && <nav className="research-section-links" aria-label="Jump to a research section"><p>Jump to a section:</p>{sections.map(heading => <Link className="text-link" key={heading} to={`/lab/research${params.size ? `?${params.toString()}` : ""}#${sectionId(heading)}`}>{heading.replace("Current researchers", "Ongoing research")}</Link>)}</nav>}
+      {sections.length > 1 && <details className="disclosure research-section-index">
+        <summary>Jump to a research section</summary>
+        <nav className="research-section-links" aria-label="Research sections">{sections.map(heading => <Link className="text-link" key={heading} to={`/lab/research${params.size ? `?${params.toString()}` : ""}#${sectionId(heading)}`}>{heading.replace("Current researchers", "Ongoing research")}</Link>)}</nav>
+      </details>}
       {visible.length ? <>{sections.map(heading => <section className="research-category" key={heading} aria-labelledby={sectionId(heading)}><h2 id={sectionId(heading)} tabIndex={-1}>{heading.replace("Current researchers", "Ongoing research")}</h2><div className="research-grid">{visible.filter(group => membershipHeading(group) === heading).map(group => <ResearchCard key={group.slug} group={group} />)}</div></section>)}</> : <div className="empty-results"><h2>No groups match these filters</h2><p>Try another topic or name, change the filters, or select “Show all research”.</p></div>}
       <section className="project-contact" aria-labelledby="research-contact-title">
         <h2 id="research-contact-title">Interested in our research?</h2>
